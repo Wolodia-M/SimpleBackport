@@ -1,0 +1,16 @@
+[
+{
+  "modid": "simplebackport",
+  "name": "Simple Backport",
+  "description": "Simple backport of new minecraft features to mc 1.12.2.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["WolodiaM"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
