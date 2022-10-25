@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,6 @@
 package my.wolodiam.simplebackport.utils.registry;
 // Import minecraft forge classes
 import my.wolodiam.simplebackport.utils.*;
-import net.minecraft.block.material.*;
 import net.minecraftforge.client.event.*;
 import net.minecraftforge.event.*;
 import net.minecraftforge.fml.common.*;
@@ -29,8 +28,8 @@ import net.minecraftforge.fml.common.eventhandler.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 // Import mod classes
-import my.wolodiam.simplebackport.mc1_20.blocks.OakHangingSignTopFullBlock;
-import my.wolodiam.simplebackport.mc1_20.blocks.OakHangingSignSideBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignTopFullBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignSideBlock;
 
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class BlockRegister {

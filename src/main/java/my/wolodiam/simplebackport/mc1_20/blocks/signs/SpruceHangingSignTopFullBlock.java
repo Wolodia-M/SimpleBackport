@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 */
 
 // Java package
-package my.wolodiam.simplebackport.mc1_20.blocks;
+package my.wolodiam.simplebackport.mc1_20.blocks.signs;
 // Import minecraft classes
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
@@ -35,9 +35,9 @@ import net.minecraft.tileentity.TileEntity;
 import my.wolodiam.simplebackport.utils.registry.ItemRegister;
 import my.wolodiam.simplebackport.api.signs.SignBlock;
 import my.wolodiam.simplebackport.mc1_20.signTE.OakHangingSignTE;
-public class OakHangingSignTopFullBlock extends SignBlock {
+public class SpruceHangingSignTopFullBlock extends SignBlock {
     public static final PropertyInteger ROTATION = PropertyInteger.create("rotation", 0, 15);
-    public OakHangingSignTopFullBlock(String name) {
+    public SpruceHangingSignTopFullBlock(String name) {
         super();
         this.setRegistryName(name);
         this.setUnlocalizedName(name);

@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 */
 
 // Java package
-package my.wolodiam.simplebackport.mc1_20.blocks;
+package my.wolodiam.simplebackport.mc1_20.blocks.signs;
 import net.minecraft.block.BlockWallSign;
 // Import minecraft classes
 import net.minecraft.block.*;
