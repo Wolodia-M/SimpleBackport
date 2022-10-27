@@ -109,10 +109,12 @@ task createSourceJar(type: Jar) { // Generate sources
     classifier = 'sources'
 }
 // Tasks settings
-// compileJava run with prepared and preparced sources
+// compileJava run with prepared and preparced sources and recources
 tasks.compileJava.setSource "$buildDir/generated-src"
-// and depends on generateSources task
+// All compilation tasks depends on generateSources
 tasks.compileJava.dependsOn('generateSources')
+tasks.createSourceJar.dependsOn('generateSources')
+tasks.createDeobfJar.dependsOn('generateSources')
 // task build depend on createSourceJar and createDeobfJar
 // for generating other jars
 tasks.build.dependsOn('createSourceJar', 'createDeobfJar')

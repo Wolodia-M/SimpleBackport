@@ -33,9 +33,9 @@ import my.wolodiam.simplebackport.api.signs.SignTileEntity;
 import my.wolodiam.simplebackport.utils.DATA;
 import my.wolodiam.simplebackport.utils.registry.*;
 
-public class SpruceHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEntity>
+public class BirchHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEntity>
 {
-    private static final ResourceLocation TEXTURE_SPRUCE_HANGING_SIGN = new ResourceLocation(DATA.MODID + ":" +"textures/sign/spruce_hanging_sign.png");
+    private static final ResourceLocation TEXTURE_BIRCH_HANGING_SIGN = new ResourceLocation(DATA.MODID + ":" +"textures/sign/birch_hanging_sign.png");
     private final HangingSignTopFullModel MODEL_HANGING_SIGN_TOP_FULL = new HangingSignTopFullModel();
     private final HangingSignSideModel MODEL_HANGING_SIGN_SIDE = new HangingSignSideModel();
     @Override
@@ -45,13 +45,13 @@ public class SpruceHangingSignRenderer extends TileEntitySpecialRenderer<SignTil
         GlStateManager.pushMatrix();
         float f = 0.6666667F;
 
-        if (block == BlockRegister.SPRUCE_HANGING_SIGN_TOP_FULL)
+        if (block == BlockRegister.BIRCH_HANGING_SIGN_TOP_FULL)
         {
             GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
             float f1 = (float)(tileEntity.getBlockMetadata() * 360) / 16.0F;
             GlStateManager.rotate(-f1, 0.0F, 1.0F, 0.0F);
         }
-        else // Block == BlockRegister.SPRUCE_HANGING_SIGN_SIDE
+        else // Block == BlockRegister.BIRCH_HANGING_SIGN_SIDE
         {
             int k = tileEntity.getBlockMetadata();
             float f2 = 0.0F;
@@ -87,9 +87,9 @@ public class SpruceHangingSignRenderer extends TileEntitySpecialRenderer<SignTil
         }
         else
         {
-            this.bindTexture(TEXTURE_SPRUCE_HANGING_SIGN);
+            this.bindTexture(TEXTURE_BIRCH_HANGING_SIGN);
         }
-        if (block == BlockRegister.SPRUCE_HANGING_SIGN_TOP_FULL)
+        if (block == BlockRegister.BIRCH_HANGING_SIGN_TOP_FULL)
         {
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();
@@ -127,7 +127,7 @@ public class SpruceHangingSignRenderer extends TileEntitySpecialRenderer<SignTil
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             GlStateManager.popMatrix();
         }
-        else // Block == BlockRegister.SPRUCE_HANGING_SIGN_SIDE
+        else // Block == BlockRegister.BIRCH_HANGING_SIGN_SIDE
         {
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();

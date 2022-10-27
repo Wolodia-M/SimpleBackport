@@ -36,14 +36,16 @@ import my.wolodiam.simplebackport.mc1_20.items.*;
 public class ItemRegister {
     public static Item OAK_HANGING_SIGN_ITEM;
     public static Item SPRUCE_HANGING_SIGN_ITEM;
+    public static Item BIRCH_HANGING_SIGN_ITEM;
 
     /**
      * Init of all items of mod, first faze
      */
     public static void init()
     {
-        OAK_HANGING_SIGN_ITEM = new OakHangingSignItem("oak_hanging_sign");
+        OAK_HANGING_SIGN_ITEM    = new OakHangingSignItem("oak_hanging_sign");
         SPRUCE_HANGING_SIGN_ITEM = new SpruceHangingSignItem("spruce_hanging_sign");
+        BIRCH_HANGING_SIGN_ITEM  = new BirchHangingSignItem("birch_hanging_sign");
     }
 
     /**
@@ -66,6 +68,7 @@ public class ItemRegister {
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(OAK_HANGING_SIGN_ITEM);
         event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_ITEM);
+        event.getRegistry().registerAll(BIRCH_HANGING_SIGN_ITEM);
     }
 
     /**
@@ -78,6 +81,7 @@ public class ItemRegister {
     {
         registerModel(OAK_HANGING_SIGN_ITEM, 0);
         registerModel(SPRUCE_HANGING_SIGN_ITEM, 0);
+        registerModel(BIRCH_HANGING_SIGN_ITEM, 0);
     }
 }
 

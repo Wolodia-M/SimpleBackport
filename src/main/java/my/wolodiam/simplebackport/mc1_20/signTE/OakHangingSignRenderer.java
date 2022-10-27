@@ -129,7 +129,6 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
         }
         else // Block == BlockRegister.OAK_HANGING_SIGN_SIDE
         {
-            // TODO: correctly draw chains and draw stick
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();
             GlStateManager.scale(0.6666667F, -0.6666667F, -0.6666667F);

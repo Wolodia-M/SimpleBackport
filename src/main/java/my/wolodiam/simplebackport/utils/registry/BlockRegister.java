@@ -36,12 +36,16 @@ public class BlockRegister {
     public static Block OAK_HANGING_SIGN_SIDE;
     public static Block SPRUCE_HANGING_SIGN_TOP_FULL;
     public static Block SPRUCE_HANGING_SIGN_SIDE;
+    public static Block BIRCH_HANGING_SIGN_TOP_FULL;
+    public static Block BIRCH_HANGING_SIGN_SIDE;
 
     public static void init() {
         OAK_HANGING_SIGN_TOP_FULL    = new OakHangingSignTopFullBlock("oak_hanging_sign_top_full");
         OAK_HANGING_SIGN_SIDE        = new OakHangingSignSideBlock("oak_hanging_sign_side");
         SPRUCE_HANGING_SIGN_TOP_FULL = new SpruceHangingSignTopFullBlock("spruce_hanging_sign_top_full");
         SPRUCE_HANGING_SIGN_SIDE     = new SpruceHangingSignSideBlock("spruce_hanging_sign_side");
+        BIRCH_HANGING_SIGN_TOP_FULL  = new BirchHangingSignTopFullBlock("birch_hanging_sign_top_full");
+        BIRCH_HANGING_SIGN_SIDE      = new BirchHangingSignSideBlock("birch_hanging_sign_side");
     }
 
     @SubscribeEvent
@@ -50,6 +54,8 @@ public class BlockRegister {
         event.getRegistry().registerAll(OAK_HANGING_SIGN_SIDE);
         event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_TOP_FULL);
         event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_SIDE);
+        event.getRegistry().registerAll(BIRCH_HANGING_SIGN_TOP_FULL);
+        event.getRegistry().registerAll(BIRCH_HANGING_SIGN_SIDE);
     }
 
     @SubscribeEvent

@@ -43,6 +43,8 @@ public class OakHangingSignSideBlock extends SignBlock {
 
 
     public OakHangingSignSideBlock(String name) {
+        super();
+        this.setHardness(1);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         this.setRegistryName(name);
         this.setUnlocalizedName(name);

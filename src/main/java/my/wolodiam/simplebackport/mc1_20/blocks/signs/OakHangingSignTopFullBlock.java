@@ -39,6 +39,7 @@ public class OakHangingSignTopFullBlock extends SignBlock {
     public static final PropertyInteger ROTATION = PropertyInteger.create("rotation", 0, 15);
     public OakHangingSignTopFullBlock(String name) {
         super();
+        this.setHardness(1);
         this.setRegistryName(name);
         this.setUnlocalizedName(name);
     }

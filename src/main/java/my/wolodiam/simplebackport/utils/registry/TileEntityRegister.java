@@ -33,9 +33,9 @@ import my.wolodiam.simplebackport.api.signs.*;
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class TileEntityRegister {
     public static void registerTE() {
-        GameRegistry.registerTileEntity(SignTileEntity.class, DATA.MODID + ":sign_tile_entity_generic");
         GameRegistry.registerTileEntity(OakHangingSignTE.class, DATA.MODID + ":oak_hanging_sign_tile_entity");
         GameRegistry.registerTileEntity(SpruceHangingSignTE.class, DATA.MODID + ":spruce_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(BirchHangingSignTE.class, DATA.MODID);
         registerModels();
     }
     @SideOnly(Side.CLIENT)
@@ -43,5 +43,6 @@ public class TileEntityRegister {
     {
         ClientRegistry.bindTileEntitySpecialRenderer(OakHangingSignTE.class, new OakHangingSignRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(SpruceHangingSignTE.class, new SpruceHangingSignRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(BirchHangingSignTE.class, new BirchHangingSignRenderer());
     }
 }
