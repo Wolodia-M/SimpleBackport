@@ -34,7 +34,7 @@ import net.minecraft.tileentity.TileEntity;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.ItemRegister;
 import my.wolodiam.simplebackport.api.signs.SignBlock;
-import my.wolodiam.simplebackport.mc1_20.signTE.OakHangingSignTE;
+import my.wolodiam.simplebackport.mc1_20.signTE.SpruceHangingSignTE;
 public class SpruceHangingSignTopFullBlock extends SignBlock {
     public static final PropertyInteger ROTATION = PropertyInteger.create("rotation", 0, 15);
     public SpruceHangingSignTopFullBlock(String name) {
@@ -52,7 +52,7 @@ public class SpruceHangingSignTopFullBlock extends SignBlock {
         else
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
-            return tileentity instanceof OakHangingSignTE ? ((OakHangingSignTE)tileentity).executeCommand(playerIn) : false;
+            return tileentity instanceof SpruceHangingSignTE ? ((SpruceHangingSignTE)tileentity).executeCommand(playerIn) : false;
         }
     }
 
@@ -63,7 +63,7 @@ public class SpruceHangingSignTopFullBlock extends SignBlock {
      */
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new OakHangingSignTE();
+        return new SpruceHangingSignTE();
     }
 
     /**
@@ -149,6 +149,6 @@ public class SpruceHangingSignTopFullBlock extends SignBlock {
     @Override
     public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
     {
-        drops.add(new ItemStack(ItemRegister.OAK_HANGING_SIGN_ITEM, 1));
+        drops.add(new ItemStack(ItemRegister.SPRUCE_HANGING_SIGN_ITEM, 1));
     }
 }

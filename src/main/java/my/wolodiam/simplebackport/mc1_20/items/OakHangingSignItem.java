@@ -33,7 +33,6 @@ import net.minecraft.world.*;
 import my.wolodiam.simplebackport.utils.registry.BlockRegister;
 import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignTopFullBlock;
 import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignSideBlock;
-import org.jetbrains.annotations.*;
 
 public class OakHangingSignItem extends Item {
     public OakHangingSignItem(String name) {
@@ -43,7 +42,7 @@ public class OakHangingSignItem extends Item {
         setRegistryName(name);
     }
 
-    public EnumActionResult onItemUse(EntityPlayer player, @NotNull World world, BlockPos blockPos, EnumHand hand, EnumFacing facing, float float1, float float2, float float3) {
+    public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos blockPos, EnumHand hand, EnumFacing facing, float float1, float float2, float float3) {
         IBlockState blockState = world.getBlockState(blockPos);
         boolean blockCanBePlaces = blockState.getBlock().isReplaceable(world, blockPos);
         if (true) {

@@ -31,9 +31,8 @@ import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.BlockRegister;
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignTopFullBlock;
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignSideBlock;
-import org.jetbrains.annotations.*;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.SpruceHangingSignTopFullBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.SpruceHangingSignSideBlock;
 
 public class SpruceHangingSignItem extends Item {
     public SpruceHangingSignItem(String name) {
@@ -43,22 +42,22 @@ public class SpruceHangingSignItem extends Item {
         setRegistryName(name);
     }
 
-    public EnumActionResult onItemUse(EntityPlayer player, @NotNull World world, BlockPos blockPos, EnumHand hand, EnumFacing facing, float float1, float float2, float float3) {
+    public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos blockPos, EnumHand hand, EnumFacing facing, float float1, float float2, float float3) {
         IBlockState blockState = world.getBlockState(blockPos);
         boolean blockCanBePlaces = blockState.getBlock().isReplaceable(world, blockPos);
         if (true) {
             blockPos = blockPos.offset(facing);
             ItemStack itemStack = player.getHeldItem(hand);
-            if (player.canPlayerEdit(blockPos, facing, itemStack) && BlockRegister.OAK_HANGING_SIGN_TOP_FULL.canPlaceBlockAt(world, blockPos)) {
+            if (player.canPlayerEdit(blockPos, facing, itemStack) && BlockRegister.SPRUCE_HANGING_SIGN_TOP_FULL.canPlaceBlockAt(world, blockPos)) {
                 if (world.isRemote) {
                     return EnumActionResult.SUCCESS;
                 } else {
                     blockPos = blockCanBePlaces ? blockPos.down() : blockPos;
                     if (facing == EnumFacing.DOWN) {
                         int pos1 = MathHelper.floor((double)((player.rotationYaw + 180.0F) * 16.0F / 360.0F) + 0.5) & 15;
-                        world.setBlockState(blockPos, BlockRegister.OAK_HANGING_SIGN_TOP_FULL.getDefaultState().withProperty(OakHangingSignTopFullBlock.ROTATION, pos1), 11);
+                        world.setBlockState(blockPos, BlockRegister.SPRUCE_HANGING_SIGN_TOP_FULL.getDefaultState().withProperty(SpruceHangingSignTopFullBlock.ROTATION, pos1), 11);
                     } else {
-                        world.setBlockState(blockPos,BlockRegister.OAK_HANGING_SIGN_SIDE.getDefaultState().withProperty(OakHangingSignSideBlock.FACING, facing), 11);
+                        world.setBlockState(blockPos,BlockRegister.SPRUCE_HANGING_SIGN_SIDE.getDefaultState().withProperty(SpruceHangingSignSideBlock.FACING, facing), 11);
                     }
 
                     TileEntity tileEntitySign = world.getTileEntity(blockPos);

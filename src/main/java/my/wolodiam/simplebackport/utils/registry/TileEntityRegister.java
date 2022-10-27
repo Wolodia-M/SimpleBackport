@@ -34,12 +34,14 @@ import my.wolodiam.simplebackport.api.signs.*;
 public class TileEntityRegister {
     public static void registerTE() {
         GameRegistry.registerTileEntity(SignTileEntity.class, DATA.MODID + ":sign_tile_entity_generic");
-        GameRegistry.registerTileEntity(OakHangingSignTE.class, DATA.MODID + ":oak_hanging_sign_top_full_tile_entity");
+        GameRegistry.registerTileEntity(OakHangingSignTE.class, DATA.MODID + ":oak_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(SpruceHangingSignTE.class, DATA.MODID + ":spruce_hanging_sign_tile_entity");
         registerModels();
     }
     @SideOnly(Side.CLIENT)
     private static void registerModels()
     {
         ClientRegistry.bindTileEntitySpecialRenderer(OakHangingSignTE.class, new OakHangingSignRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(SpruceHangingSignTE.class, new SpruceHangingSignRenderer());
     }
 }

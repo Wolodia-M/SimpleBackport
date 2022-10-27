@@ -28,23 +28,28 @@ import net.minecraftforge.fml.common.eventhandler.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 // Import mod classes
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignTopFullBlock;
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignSideBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.*;
 
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class BlockRegister {
     public static Block OAK_HANGING_SIGN_TOP_FULL;
     public static Block OAK_HANGING_SIGN_SIDE;
+    public static Block SPRUCE_HANGING_SIGN_TOP_FULL;
+    public static Block SPRUCE_HANGING_SIGN_SIDE;
 
     public static void init() {
-        OAK_HANGING_SIGN_TOP_FULL = new OakHangingSignTopFullBlock("oak_hanging_sign_top_full");
-        OAK_HANGING_SIGN_SIDE     = new OakHangingSignSideBlock("oak_hanging_sign_side");
+        OAK_HANGING_SIGN_TOP_FULL    = new OakHangingSignTopFullBlock("oak_hanging_sign_top_full");
+        OAK_HANGING_SIGN_SIDE        = new OakHangingSignSideBlock("oak_hanging_sign_side");
+        SPRUCE_HANGING_SIGN_TOP_FULL = new SpruceHangingSignTopFullBlock("spruce_hanging_sign_top_full");
+        SPRUCE_HANGING_SIGN_SIDE     = new SpruceHangingSignSideBlock("spruce_hanging_sign_side");
     }
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().registerAll(OAK_HANGING_SIGN_TOP_FULL);
         event.getRegistry().registerAll(OAK_HANGING_SIGN_SIDE);
+        event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_TOP_FULL);
+        event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_SIDE);
     }
 
     @SubscribeEvent

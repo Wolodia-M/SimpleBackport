@@ -17,14 +17,9 @@
 */
 
 // Java package
-package my.wolodiam.simplebackport.utils;
-// Import side libraries classes
-import org.apache.logging.log4j.Logger;
-// Some static data (like modid)
-public class DATA {
-    public static final String MODID   = "simplebackport";
-    public static final String VERSION = "@VERSION@";
-    public static final String NAME    = "Simple Backport";
-    public static final String AUTHOR  = "WolodiaM";
-    public static Logger logger;
+package my.wolodiam.simplebackport.mc1_20.signTE;
+// Import mod classes
+import my.wolodiam.simplebackport.api.signs.SignTileEntity;
+
+public class SpruceHangingSignTE extends SignTileEntity {
 }
