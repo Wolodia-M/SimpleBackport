@@ -35,7 +35,8 @@ public class TileEntityRegister {
     public static void registerTE() {
         GameRegistry.registerTileEntity(OakHangingSignTE.class, DATA.MODID + ":oak_hanging_sign_tile_entity");
         GameRegistry.registerTileEntity(SpruceHangingSignTE.class, DATA.MODID + ":spruce_hanging_sign_tile_entity");
-        GameRegistry.registerTileEntity(BirchHangingSignTE.class, DATA.MODID);
+        GameRegistry.registerTileEntity(BirchHangingSignTE.class, DATA.MODID + ":birch_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(DarkOakHangingSignTE.class, DATA.MODID + ":dark_oak_hanging_sign_tile_entity");
         registerModels();
     }
     @SideOnly(Side.CLIENT)
@@ -44,5 +45,6 @@ public class TileEntityRegister {
         ClientRegistry.bindTileEntitySpecialRenderer(OakHangingSignTE.class, new OakHangingSignRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(SpruceHangingSignTE.class, new SpruceHangingSignRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(BirchHangingSignTE.class, new BirchHangingSignRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(DarkOakHangingSignTE.class, new DarkOakHangingSignRenderer());
     }
 }

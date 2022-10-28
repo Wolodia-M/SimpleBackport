@@ -90,6 +90,10 @@ processResources {
     }
 }
 // Custom tasks
+// Clear old sources
+task clearGeneratedSources(type: Delete) {
+    delete "$buildDir/generated-src"
+}
 // Generate source code with replaced version
 task generateSources(type: Copy) {
     from 'src/main/java'
@@ -109,6 +113,8 @@ task createSourceJar(type: Jar) { // Generate sources
     classifier = 'sources'
 }
 // Tasks settings
+// Always make new generated sources
+tasks.generateSources.dependsOn('clearGeneratedSources')
 // compileJava run with prepared and preparced sources and recources
 tasks.compileJava.setSource "$buildDir/generated-src"
 // All compilation tasks depends on generateSources

@@ -154,3 +154,10 @@ public class BirchHangingSignTopFullBlock extends SignBlock {
         drops.add(new ItemStack(ItemRegister.BIRCH_HANGING_SIGN_ITEM, 1));
     }
 }
+
+
+
+
+
+
+

@@ -32,9 +32,9 @@ import net.minecraft.tileentity.TileEntity;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.*;
 import my.wolodiam.simplebackport.api.signs.SignBlock;
-import my.wolodiam.simplebackport.mc1_20.signTE.BirchHangingSignTE;
+import my.wolodiam.simplebackport.mc1_20.signTE.DarkOakHangingSignTE;
 
-public class BirchHangingSignSideBlock extends SignBlock {
+public class DarkOakHangingSignSideBlock extends SignBlock {
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     protected static final AxisAlignedBB SIGN_EAST_AABB = new AxisAlignedBB(0.0D, 0.2D, 0.4D, 1.0D, 0.8D, 0.6D);
     protected static final AxisAlignedBB SIGN_WEST_AABB = new AxisAlignedBB(0.0D, 0.2D, 0.4D, 1.0D, 0.8D, 0.6D);
@@ -42,7 +42,7 @@ public class BirchHangingSignSideBlock extends SignBlock {
     protected static final AxisAlignedBB SIGN_NORTH_AABB = new AxisAlignedBB(0.4D, 0.2D, 0.0D, 0.6D, 0.8D, 1.0D);
 
 
-    public BirchHangingSignSideBlock(String name) {
+    public DarkOakHangingSignSideBlock(String name) {
         super();
         this.setHardness(1);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
@@ -57,7 +57,7 @@ public class BirchHangingSignSideBlock extends SignBlock {
      */
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new BirchHangingSignTE();
+        return new DarkOakHangingSignTE();
     }
 
     @Override
@@ -70,7 +70,7 @@ public class BirchHangingSignSideBlock extends SignBlock {
         else
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
-            return tileentity instanceof BirchHangingSignTE ? ((BirchHangingSignTE)tileentity).executeCommand(playerIn) : false;
+            return tileentity instanceof DarkOakHangingSignTE ? ((DarkOakHangingSignTE)tileentity).executeCommand(playerIn) : false;
         }
     }
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
@@ -129,9 +129,10 @@ public class BirchHangingSignSideBlock extends SignBlock {
     @Override
     public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
     {
-        drops.add(new ItemStack(ItemRegister.BIRCH_HANGING_SIGN_ITEM, 1));
+        drops.add(new ItemStack(ItemRegister.DARK_OAK_HANGING_SIGN_ITEM, 1));
     }
 }
+
 
 
 

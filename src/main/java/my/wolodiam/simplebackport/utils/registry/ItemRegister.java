@@ -19,6 +19,7 @@
 // Java package
 package my.wolodiam.simplebackport.utils.registry;
 // Import minecraft classes
+import my.wolodiam.simplebackport.mc1_20.items.signs.*;
 import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.item.Item;
 // Import forge classes
@@ -29,7 +30,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.*;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.*;
-import my.wolodiam.simplebackport.mc1_20.items.*;
 
 // Class for forge registry
 @Mod.EventBusSubscriber(modid = DATA.MODID)
@@ -37,15 +37,17 @@ public class ItemRegister {
     public static Item OAK_HANGING_SIGN_ITEM;
     public static Item SPRUCE_HANGING_SIGN_ITEM;
     public static Item BIRCH_HANGING_SIGN_ITEM;
+    public static Item DARK_OAK_HANGING_SIGN_ITEM;
 
     /**
      * Init of all items of mod, first faze
      */
     public static void init()
     {
-        OAK_HANGING_SIGN_ITEM    = new OakHangingSignItem("oak_hanging_sign");
-        SPRUCE_HANGING_SIGN_ITEM = new SpruceHangingSignItem("spruce_hanging_sign");
-        BIRCH_HANGING_SIGN_ITEM  = new BirchHangingSignItem("birch_hanging_sign");
+        OAK_HANGING_SIGN_ITEM      = new OakHangingSignItem("oak_hanging_sign");
+        SPRUCE_HANGING_SIGN_ITEM   = new SpruceHangingSignItem("spruce_hanging_sign");
+        BIRCH_HANGING_SIGN_ITEM    = new BirchHangingSignItem("birch_hanging_sign");
+        DARK_OAK_HANGING_SIGN_ITEM = new DarkOakHangingSignItem("dark_oak_hanging_sign");
     }
 
     /**
@@ -69,6 +71,7 @@ public class ItemRegister {
         event.getRegistry().registerAll(OAK_HANGING_SIGN_ITEM);
         event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_ITEM);
         event.getRegistry().registerAll(BIRCH_HANGING_SIGN_ITEM);
+        event.getRegistry().registerAll(DARK_OAK_HANGING_SIGN_ITEM);
     }
 
     /**
@@ -82,6 +85,7 @@ public class ItemRegister {
         registerModel(OAK_HANGING_SIGN_ITEM, 0);
         registerModel(SPRUCE_HANGING_SIGN_ITEM, 0);
         registerModel(BIRCH_HANGING_SIGN_ITEM, 0);
+        registerModel(DARK_OAK_HANGING_SIGN_ITEM, 0);
     }
 }
 

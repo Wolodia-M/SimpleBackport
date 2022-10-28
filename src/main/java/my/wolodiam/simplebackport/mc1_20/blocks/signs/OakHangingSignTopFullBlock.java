@@ -153,3 +153,8 @@ public class OakHangingSignTopFullBlock extends SignBlock {
         drops.add(new ItemStack(ItemRegister.OAK_HANGING_SIGN_ITEM, 1));
     }
 }
+
+
+
+
+

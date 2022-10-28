@@ -18,6 +18,8 @@
 
 // Java package
 package my.wolodiam.simplebackport.utils.registry;
+// Import Java classes
+import java.util.Map;
 // Import minecraft forge classes
 import my.wolodiam.simplebackport.utils.*;
 import net.minecraftforge.client.event.*;
@@ -38,14 +40,19 @@ public class BlockRegister {
     public static Block SPRUCE_HANGING_SIGN_SIDE;
     public static Block BIRCH_HANGING_SIGN_TOP_FULL;
     public static Block BIRCH_HANGING_SIGN_SIDE;
+    public static Block DARK_OAK_HANGING_SIGN_TOP_FULL;
+    public static Block DARK_OAK_HANGING_SIGN_SIDE;
 
     public static void init() {
-        OAK_HANGING_SIGN_TOP_FULL    = new OakHangingSignTopFullBlock("oak_hanging_sign_top_full");
-        OAK_HANGING_SIGN_SIDE        = new OakHangingSignSideBlock("oak_hanging_sign_side");
-        SPRUCE_HANGING_SIGN_TOP_FULL = new SpruceHangingSignTopFullBlock("spruce_hanging_sign_top_full");
-        SPRUCE_HANGING_SIGN_SIDE     = new SpruceHangingSignSideBlock("spruce_hanging_sign_side");
-        BIRCH_HANGING_SIGN_TOP_FULL  = new BirchHangingSignTopFullBlock("birch_hanging_sign_top_full");
-        BIRCH_HANGING_SIGN_SIDE      = new BirchHangingSignSideBlock("birch_hanging_sign_side");
+        OAK_HANGING_SIGN_TOP_FULL      = new OakHangingSignTopFullBlock("oak_hanging_sign_top_full");
+        OAK_HANGING_SIGN_TOP_FULL      = new OakHangingSignTopFullBlock("oak_hanging_sign_top_full");
+        OAK_HANGING_SIGN_SIDE          = new OakHangingSignSideBlock("oak_hanging_sign_side");
+        SPRUCE_HANGING_SIGN_TOP_FULL   = new SpruceHangingSignTopFullBlock("spruce_hanging_sign_top_full");
+        SPRUCE_HANGING_SIGN_SIDE       = new SpruceHangingSignSideBlock("spruce_hanging_sign_side");
+        BIRCH_HANGING_SIGN_TOP_FULL    = new BirchHangingSignTopFullBlock("birch_hanging_sign_top_full");
+        BIRCH_HANGING_SIGN_SIDE        = new BirchHangingSignSideBlock("birch_hanging_sign_side");
+        DARK_OAK_HANGING_SIGN_TOP_FULL = new DarkOakHangingSignTopFullBlock("dark_oak__hanging_sign_top_full");
+        DARK_OAK_HANGING_SIGN_SIDE     = new DarkOakHangingSignSideBlock("dark_oak_hanging_sign_side");
     }
 
     @SubscribeEvent
@@ -56,6 +63,8 @@ public class BlockRegister {
         event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_SIDE);
         event.getRegistry().registerAll(BIRCH_HANGING_SIGN_TOP_FULL);
         event.getRegistry().registerAll(BIRCH_HANGING_SIGN_SIDE);
+        event.getRegistry().registerAll(DARK_OAK_HANGING_SIGN_TOP_FULL);
+        event.getRegistry().registerAll(DARK_OAK_HANGING_SIGN_SIDE);
     }
 
     @SubscribeEvent

@@ -17,7 +17,7 @@
 */
 
 // Java package
-package my.wolodiam.simplebackport.mc1_20.items;
+package my.wolodiam.simplebackport.mc1_20.items.signs;
 // import net.minecraft.item.ItemSign;
 // Import minecraft classes
 import net.minecraft.advancements.*;
@@ -31,11 +31,11 @@ import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.BlockRegister;
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.BirchHangingSignTopFullBlock;
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.BirchHangingSignSideBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignTopFullBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignSideBlock;
 
-public class BirchHangingSignItem extends Item {
-    public BirchHangingSignItem(String name) {
+public class OakHangingSignItem extends Item {
+    public OakHangingSignItem(String name) {
         this.maxStackSize = 16;
         this.setCreativeTab(CreativeTabs.DECORATIONS);
         setUnlocalizedName(name);
@@ -55,9 +55,9 @@ public class BirchHangingSignItem extends Item {
                     blockPos = blockCanBePlaces ? blockPos.down() : blockPos;
                     if (facing == EnumFacing.DOWN) {
                         int pos1 = MathHelper.floor((double)((player.rotationYaw + 180.0F) * 16.0F / 360.0F) + 0.5) & 15;
-                        world.setBlockState(blockPos, BlockRegister.BIRCH_HANGING_SIGN_TOP_FULL.getDefaultState().withProperty(BirchHangingSignTopFullBlock.ROTATION, pos1), 11);
+                        world.setBlockState(blockPos, BlockRegister.OAK_HANGING_SIGN_TOP_FULL.getDefaultState().withProperty(OakHangingSignTopFullBlock.ROTATION, pos1), 11);
                     } else {
-                        world.setBlockState(blockPos,BlockRegister.BIRCH_HANGING_SIGN_SIDE.getDefaultState().withProperty(BirchHangingSignSideBlock.FACING, facing), 11);
+                        world.setBlockState(blockPos,BlockRegister.OAK_HANGING_SIGN_SIDE.getDefaultState().withProperty(OakHangingSignSideBlock.FACING, facing), 11);
                     }
 
                     TileEntity tileEntitySign = world.getTileEntity(blockPos);
