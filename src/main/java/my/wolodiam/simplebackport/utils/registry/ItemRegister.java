@@ -44,6 +44,7 @@ public class ItemRegister {
      * dark_oak_hanging_sign
      * birch_hanging_sign
      * acacia_hanging_sign
+     * jungle_hanging_sign
      */
     public static ArrayList<ItemRegistryType> ITEMS = new ArrayList<ItemRegistryType>();
     public static Item OAK_HANGING_SIGN_ITEM;
@@ -77,6 +78,7 @@ public class ItemRegister {
         ITEMS.add(new ItemRegistryType(new BirchHangingSignItem("birch_hanging_sign"),      "birch_hanging_sign"));
         ITEMS.add(new ItemRegistryType(new DarkOakHangingSignItem("dark_oak_hanging_sign"), "dark_oak_hanging_sign"));
         ITEMS.add(new ItemRegistryType(new AcaciaHangingSignItem("acacia_hanging_sign"),    "acacia_hanging_sign"));
+        ITEMS.add(new ItemRegistryType(new JungleHangingSignItem("jungle_hanging_sign"), "jungle_hanging_sign"));
         OAK_HANGING_SIGN_ITEM      = get("oak_hanging_sign");
         SPRUCE_HANGING_SIGN_ITEM   = get("spruce_hanging_sign");
         BIRCH_HANGING_SIGN_ITEM    = get("birch_hanging_sign");

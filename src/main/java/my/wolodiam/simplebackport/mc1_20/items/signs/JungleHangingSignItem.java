@@ -31,8 +31,8 @@ import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.BlockRegister;
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.DarkOakHangingSignTopFullBlock;
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.DarkOakHangingSignSideBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.JungleHangingSignTopFullBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.JungleHangingSignSideBlock;
 
 public class JungleHangingSignItem extends Item {
     public JungleHangingSignItem(String name) {
@@ -55,9 +55,9 @@ public class JungleHangingSignItem extends Item {
                     blockPos = blockCanBePlaces ? blockPos.down() : blockPos;
                     if (facing == EnumFacing.DOWN) {
                         int pos1 = MathHelper.floor((double)((player.rotationYaw + 180.0F) * 16.0F / 360.0F) + 0.5) & 15;
-                        world.setBlockState(blockPos, BlockRegister.get("jungle_hanging_sign_top_full").getDefaultState().withProperty(DarkOakHangingSignTopFullBlock.ROTATION, pos1), 11);
+                        world.setBlockState(blockPos, BlockRegister.get("jungle_hanging_sign_top_full").getDefaultState().withProperty(JungleHangingSignTopFullBlock.ROTATION, pos1), 11);
                     } else {
-                        world.setBlockState(blockPos,BlockRegister.get("jungle_hanging_sign_side").getDefaultState().withProperty(DarkOakHangingSignSideBlock.FACING, facing), 11);
+                        world.setBlockState(blockPos,BlockRegister.get("jungle_hanging_sign_side").getDefaultState().withProperty(JungleHangingSignSideBlock.FACING, facing), 11);
                     }
 
                     TileEntity tileEntitySign = world.getTileEntity(blockPos);

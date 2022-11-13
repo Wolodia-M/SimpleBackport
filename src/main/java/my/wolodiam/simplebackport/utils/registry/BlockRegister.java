@@ -47,6 +47,8 @@ public class BlockRegister {
      * birch_hanging_sign_side
      * acacia_hanging_sign_top_full
      * acacia_hanging_sign_side
+     * jungle_hanging_sign_top_full
+     * jungle_hanging_sign_side
      */
     public static ArrayList<BlockRegistryType> BLOCKS = new ArrayList<BlockRegistryType>();
     public static Block OAK_HANGING_SIGN_TOP_FULL;
@@ -78,6 +80,8 @@ public class BlockRegister {
         BLOCKS.add(new BlockRegistryType(new DarkOakHangingSignSideBlock("dark_oak_hanging_sign_side"), "dark_oak_hanging_sign_side"));
         BLOCKS.add(new BlockRegistryType(new AcaciaHangingSignTopFullBlock("acacia_hanging_sign_top_full"), "acacia_hanging_sign_top_full"));
         BLOCKS.add(new BlockRegistryType(new AcaciaHangingSignSideBlock("acacia_hanging_sign_side"), "acacia_hanging_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new JungleHangingSignTopFullBlock("jungle_hanging_sign_top_full"), "jungle_hanging_sign_top_full"));
+        BLOCKS.add(new BlockRegistryType(new JungleHangingSignSideBlock("jungle_hanging_sign_side"), "jungle_hanging_sign_side"));
         OAK_HANGING_SIGN_TOP_FULL      = get("oak_hanging_sign_top_full");
         OAK_HANGING_SIGN_SIDE          = get("oak_hanging_sign_side");
         SPRUCE_HANGING_SIGN_TOP_FULL   = get("spruce_hanging_sign_top_full");
