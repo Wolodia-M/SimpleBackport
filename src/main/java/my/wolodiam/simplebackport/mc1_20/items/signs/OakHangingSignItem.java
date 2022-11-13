@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -17,15 +17,13 @@
 */
 
 // Java package
-package my.wolodiam.simplebackport.mc1_20.items;
+package my.wolodiam.simplebackport.mc1_20.items.signs;
 // import net.minecraft.item.ItemSign;
 // Import minecraft classes
 import net.minecraft.advancements.*;
-import net.minecraft.block.*;
 import net.minecraft.block.state.*;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.*;
-import net.minecraft.init.*;
 import net.minecraft.item.*;
 import net.minecraft.tileentity.*;
 import net.minecraft.util.*;
@@ -33,9 +31,8 @@ import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.BlockRegister;
-import my.wolodiam.simplebackport.mc1_20.blocks.OakHangingSignTopFullBlock;
-import my.wolodiam.simplebackport.mc1_20.blocks.OakHangingSignSideBlock;
-import org.jetbrains.annotations.*;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignTopFullBlock;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.OakHangingSignSideBlock;
 
 public class OakHangingSignItem extends Item {
     public OakHangingSignItem(String name) {
@@ -45,7 +42,7 @@ public class OakHangingSignItem extends Item {
         setRegistryName(name);
     }
 
-    public EnumActionResult onItemUse(EntityPlayer player, @NotNull World world, BlockPos blockPos, EnumHand hand, EnumFacing facing, float float1, float float2, float float3) {
+    public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos blockPos, EnumHand hand, EnumFacing facing, float float1, float float2, float float3) {
         IBlockState blockState = world.getBlockState(blockPos);
         boolean blockCanBePlaces = blockState.getBlock().isReplaceable(world, blockPos);
         if (true) {

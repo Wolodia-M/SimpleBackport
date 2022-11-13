@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 */
 
 // Java package
-package my.wolodiam.simplebackport.mc1_20.blocks;
+package my.wolodiam.simplebackport.mc1_20.blocks.signs;
 // Import minecraft classes
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
@@ -34,11 +34,13 @@ import net.minecraft.tileentity.TileEntity;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.ItemRegister;
 import my.wolodiam.simplebackport.api.signs.SignBlock;
-import my.wolodiam.simplebackport.mc1_20.signTE.OakHangingSignTE;
-public class OakHangingSignTopFullBlock extends SignBlock {
+import my.wolodiam.simplebackport.mc1_20.signTE.AcaciaHangingSignTE;
+
+public class AcaciaHangingSignTopFullBlock extends SignBlock {
     public static final PropertyInteger ROTATION = PropertyInteger.create("rotation", 0, 15);
-    public OakHangingSignTopFullBlock(String name) {
+    public AcaciaHangingSignTopFullBlock(String name) {
         super();
+        this.setHardness(1);
         this.setRegistryName(name);
         this.setUnlocalizedName(name);
     }
@@ -52,7 +54,7 @@ public class OakHangingSignTopFullBlock extends SignBlock {
         else
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
-            return tileentity instanceof OakHangingSignTE ? ((OakHangingSignTE)tileentity).executeCommand(playerIn) : false;
+            return tileentity instanceof AcaciaHangingSignTE ? ((AcaciaHangingSignTE)tileentity).executeCommand(playerIn) : false;
         }
     }
 
@@ -63,7 +65,7 @@ public class OakHangingSignTopFullBlock extends SignBlock {
      */
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new OakHangingSignTE();
+        return new AcaciaHangingSignTE();
     }
 
     /**
@@ -149,6 +151,13 @@ public class OakHangingSignTopFullBlock extends SignBlock {
     @Override
     public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
     {
-        drops.add(new ItemStack(ItemRegister.OAK_HANGING_SIGN_ITEM, 1));
+        drops.add(new ItemStack(ItemRegister.get("acacia_hanging_sign"), 1));
     }
 }
+
+
+
+
+
+
+

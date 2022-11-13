@@ -33,9 +33,9 @@ import my.wolodiam.simplebackport.api.signs.SignTileEntity;
 import my.wolodiam.simplebackport.utils.DATA;
 import my.wolodiam.simplebackport.utils.registry.*;
 
-public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEntity>
+public class DarkOakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEntity>
 {
-    private static final ResourceLocation TEXTURE_OAK_HANGING_SIGN = new ResourceLocation(DATA.MODID + ":" +"textures/sign/oak_hanging_sign.png");
+    private static final ResourceLocation TEXTURE_DARK_OAK_HANGING_SIGN = new ResourceLocation(DATA.MODID + ":" +"textures/sign/dark_oak_hanging_sign.png");
     private final HangingSignTopFullModel MODEL_HANGING_SIGN_TOP_FULL = new HangingSignTopFullModel();
     private final HangingSignSideModel MODEL_HANGING_SIGN_SIDE = new HangingSignSideModel();
     @Override
@@ -45,13 +45,13 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
         GlStateManager.pushMatrix();
         float f = 0.6666667F;
 
-        if (block == BlockRegister.OAK_HANGING_SIGN_TOP_FULL)
+        if (block == BlockRegister.DARK_OAK_HANGING_SIGN_TOP_FULL)
         {
             GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
             float f1 = (float)(tileEntity.getBlockMetadata() * 360) / 16.0F;
             GlStateManager.rotate(-f1, 0.0F, 1.0F, 0.0F);
         }
-        else // Block == BlockRegister.OAK_HANGING_SIGN_SIDE
+        else // Block == BlockRegister.DARK_OAK_HANGING_SIGN_SIDE
         {
             int k = tileEntity.getBlockMetadata();
             float f2 = 0.0F;
@@ -87,9 +87,9 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
         }
         else
         {
-            this.bindTexture(TEXTURE_OAK_HANGING_SIGN);
+            this.bindTexture(TEXTURE_DARK_OAK_HANGING_SIGN);
         }
-        if (block == BlockRegister.OAK_HANGING_SIGN_TOP_FULL)
+        if (block == BlockRegister.DARK_OAK_HANGING_SIGN_TOP_FULL)
         {
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();
@@ -127,7 +127,7 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             GlStateManager.popMatrix();
         }
-        else // Block == BlockRegister.OAK_HANGING_SIGN_SIDE
+        else // Block == BlockRegister.DARK_OAK_HANGING_SIGN_SIDE
         {
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();
