@@ -19,9 +19,8 @@
 // Java package
 package my.wolodiam.simplebackport.utils.registry;
 // Import Java classes
-import java.util.Map;
+import java.util.ArrayList;
 // Import minecraft forge classes
-import my.wolodiam.simplebackport.utils.*;
 import net.minecraftforge.client.event.*;
 import net.minecraftforge.event.*;
 import net.minecraftforge.fml.common.*;
@@ -30,10 +29,26 @@ import net.minecraftforge.fml.common.eventhandler.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 // Import mod classes
+import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.mc1_20.blocks.signs.*;
+import my.wolodiam.simplebackport.utils.registry.data.BlockRegistryType;
 
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class BlockRegister {
+    /*
+     *      1.20
+     * oak_hanging_sign_top_full
+     * oak_hanging_sign_side
+     * dark_oak_hanging_sign_top_full
+     * dark_oak_hanging_sign_side
+     * spruce_hanging_sign_top_full
+     * spruce_hanging_sign_side
+     * birch_hanging_sign_top_full
+     * birch_hanging_sign_side
+     * acacia_hanging_sign_top_full
+     * acacia_hanging_sign_side
+     */
+    public static ArrayList<BlockRegistryType> BLOCKS = new ArrayList<BlockRegistryType>();
     public static Block OAK_HANGING_SIGN_TOP_FULL;
     public static Block OAK_HANGING_SIGN_SIDE;
     public static Block SPRUCE_HANGING_SIGN_TOP_FULL;
@@ -43,28 +58,41 @@ public class BlockRegister {
     public static Block DARK_OAK_HANGING_SIGN_TOP_FULL;
     public static Block DARK_OAK_HANGING_SIGN_SIDE;
 
+    public static Block get(String id) {
+        for (BlockRegistryType data : BLOCKS) {
+            if (data.id == id) {
+                return data.block;
+            }
+        }
+        return null;
+    }
+
     public static void init() {
-        OAK_HANGING_SIGN_TOP_FULL      = new OakHangingSignTopFullBlock("oak_hanging_sign_top_full");
-        OAK_HANGING_SIGN_TOP_FULL      = new OakHangingSignTopFullBlock("oak_hanging_sign_top_full");
-        OAK_HANGING_SIGN_SIDE          = new OakHangingSignSideBlock("oak_hanging_sign_side");
-        SPRUCE_HANGING_SIGN_TOP_FULL   = new SpruceHangingSignTopFullBlock("spruce_hanging_sign_top_full");
-        SPRUCE_HANGING_SIGN_SIDE       = new SpruceHangingSignSideBlock("spruce_hanging_sign_side");
-        BIRCH_HANGING_SIGN_TOP_FULL    = new BirchHangingSignTopFullBlock("birch_hanging_sign_top_full");
-        BIRCH_HANGING_SIGN_SIDE        = new BirchHangingSignSideBlock("birch_hanging_sign_side");
-        DARK_OAK_HANGING_SIGN_TOP_FULL = new DarkOakHangingSignTopFullBlock("dark_oak__hanging_sign_top_full");
-        DARK_OAK_HANGING_SIGN_SIDE     = new DarkOakHangingSignSideBlock("dark_oak_hanging_sign_side");
+        BLOCKS.add(new BlockRegistryType(new OakHangingSignTopFullBlock("oak_hanging_sign_top_full"), "oak_hanging_sign_top_full"));
+        BLOCKS.add(new BlockRegistryType(new OakHangingSignSideBlock("oak_hanging_sign_side"), "oak_hanging_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new SpruceHangingSignTopFullBlock("spruce_hanging_sign_top_full"), "spruce_hanging_sign_top_full"));
+        BLOCKS.add(new BlockRegistryType(new SpruceHangingSignSideBlock("spruce_hanging_sign_side"), "spruce_hanging_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new BirchHangingSignTopFullBlock("birch_hanging_sign_top_full"), "birch_hanging_sign_top_full"));
+        BLOCKS.add(new BlockRegistryType(new BirchHangingSignSideBlock("birch_hanging_sign_side"), "birch_hanging_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new DarkOakHangingSignTopFullBlock("dark_oak__hanging_sign_top_full"), "dark_oak__hanging_sign_top_full"));
+        BLOCKS.add(new BlockRegistryType(new DarkOakHangingSignSideBlock("dark_oak_hanging_sign_side"), "dark_oak_hanging_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new AcaciaHangingSignTopFullBlock("acacia_hanging_sign_top_full"), "acacia_hanging_sign_top_full"));
+        BLOCKS.add(new BlockRegistryType(new AcaciaHangingSignSideBlock("acacia_hanging_sign_side"), "acacia_hanging_sign_side"));
+        OAK_HANGING_SIGN_TOP_FULL      = get("oak_hanging_sign_top_full");
+        OAK_HANGING_SIGN_SIDE          = get("oak_hanging_sign_side");
+        SPRUCE_HANGING_SIGN_TOP_FULL   = get("spruce_hanging_sign_top_full");
+        SPRUCE_HANGING_SIGN_SIDE       = get("spruce_hanging_sign_side");
+        BIRCH_HANGING_SIGN_TOP_FULL    = get("birch_hanging_sign_top_full");
+        BIRCH_HANGING_SIGN_SIDE        = get("birch_hanging_sign_side");
+        DARK_OAK_HANGING_SIGN_TOP_FULL = get("dark_oak__hanging_sign_top_full");
+        DARK_OAK_HANGING_SIGN_SIDE     = get("dark_oak_hanging_sign_side");
     }
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        event.getRegistry().registerAll(OAK_HANGING_SIGN_TOP_FULL);
-        event.getRegistry().registerAll(OAK_HANGING_SIGN_SIDE);
-        event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_TOP_FULL);
-        event.getRegistry().registerAll(SPRUCE_HANGING_SIGN_SIDE);
-        event.getRegistry().registerAll(BIRCH_HANGING_SIGN_TOP_FULL);
-        event.getRegistry().registerAll(BIRCH_HANGING_SIGN_SIDE);
-        event.getRegistry().registerAll(DARK_OAK_HANGING_SIGN_TOP_FULL);
-        event.getRegistry().registerAll(DARK_OAK_HANGING_SIGN_SIDE);
+        for (BlockRegistryType data : BLOCKS) {
+            event.getRegistry().registerAll(data.block);
+        }
     }
 
     @SubscribeEvent
