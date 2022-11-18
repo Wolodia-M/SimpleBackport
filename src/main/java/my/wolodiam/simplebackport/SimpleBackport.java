@@ -20,16 +20,19 @@
 package my.wolodiam.simplebackport;
 // Import minecraft forge classes
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.*;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.*;
+import my.wolodiam.simplebackport.utils.proxy.CommonProxy;
 import my.wolodiam.simplebackport.utils.registry.*;
 
 @Mod(modid = DATA.MODID, name = DATA.NAME, version = DATA.VERSION)
 public class SimpleBackport
 {
+    @SidedProxy(modId=DATA.MODID,clientSide="my.wolodiam.simplebackport.utils.proxy.ClientProxy", serverSide="my.wolodiam.simplebackport.utils.proxy.CommonProxy")
+    public static CommonProxy proxy;
     // Instance of mod
     @Mod.Instance
     public static SimpleBackport instance;

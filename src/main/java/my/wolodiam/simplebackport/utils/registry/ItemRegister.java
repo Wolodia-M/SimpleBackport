@@ -21,19 +21,20 @@ package my.wolodiam.simplebackport.utils.registry;
 // Import java classes
 import java.util.ArrayList;
 // Import minecraft classes
-import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.item.Item;
 // Import forge classes
 import net.minecraftforge.client.event.*;
-import net.minecraftforge.client.model.*;
 import net.minecraftforge.event.*;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 // Import mod classes
 import my.wolodiam.simplebackport.mc1_20.items.signs.*;
 import my.wolodiam.simplebackport.mc1_16.items.*;
 import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.utils.registry.data.ItemRegistryType;
+import static my.wolodiam.simplebackport.SimpleBackport.instance;
 
 // Class for forge registry
 @Mod.EventBusSubscriber(modid = DATA.MODID)
@@ -90,18 +91,6 @@ public class ItemRegister {
         BIRCH_HANGING_SIGN_ITEM    = get("birch_hanging_sign");
         DARK_OAK_HANGING_SIGN_ITEM = get("dark_oak_hanging_sign");
     }
-
-    /**
-     * Register model of item with metadata
-     *
-     * @param item => Item -> item
-     * @param meta => int ->  metadata
-     */
-    private static void registerModel(Item item, int meta)
-    {
-        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), "inventory"));
-    }
-
     /**
      * Register items in Forge registry
      *
@@ -120,12 +109,11 @@ public class ItemRegister {
      *
      * @param event Internal Forge event
      */
+    @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void registerItemsRenders(ModelRegistryEvent event) {
         DATA.logger.info("Registering item models");
-        for (ItemRegistryType data : ITEMS) {
-            registerModel(data.item, 0);
-        }
+        instance.proxy.registerItemModels();
     }
 }
 
