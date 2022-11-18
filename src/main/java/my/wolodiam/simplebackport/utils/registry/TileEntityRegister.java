@@ -19,16 +19,15 @@
 // Java package
 package my.wolodiam.simplebackport.utils.registry;
 // Import minecraft forge classes
-import my.wolodiam.simplebackport.mc1_20.signTE.*;
-import net.minecraftforge.fml.client.registry.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
 // Import minecraft classes
 // Import mod classes
 import my.wolodiam.simplebackport.utils.DATA;
-import my.wolodiam.simplebackport.api.signs.*;
-
+import my.wolodiam.simplebackport.mc1_20.signTE.*;
+// Import statics from mod classes
+import static my.wolodiam.simplebackport.SimpleBackport.instance;
 
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class TileEntityRegister {
@@ -42,15 +41,9 @@ public class TileEntityRegister {
         GameRegistry.registerTileEntity(JungleHangingSignTE.class, DATA.MODID + ":jungle_hanging_sign_tile_entity");
         registerModels();
     }
-    @SideOnly(Side.CLIENT)
     private static void registerModels()
     {
         DATA.logger.info("Registering render for TileEntityes");
-        ClientRegistry.bindTileEntitySpecialRenderer(OakHangingSignTE.class, new OakHangingSignRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(SpruceHangingSignTE.class, new SpruceHangingSignRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(BirchHangingSignTE.class, new BirchHangingSignRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(DarkOakHangingSignTE.class, new DarkOakHangingSignRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(AcaciaHangingSignTE.class, new AcaciaHangingSignRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(JungleHangingSignTE.class, new JungleHangingSignRenderer());
+        instance.proxy.registerTEModels();
     }
 }

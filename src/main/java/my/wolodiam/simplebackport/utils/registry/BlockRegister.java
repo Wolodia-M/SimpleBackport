@@ -117,7 +117,7 @@ public class BlockRegister {
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-        //clientRegister(1);
+
     }
     @SideOnly(Side.CLIENT)
     private static void clientRegister(int action) {
@@ -133,6 +133,9 @@ public class BlockRegister {
                         }
                     }
                 }
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + action);
         }
     }
     @SideOnly(Side.CLIENT)
