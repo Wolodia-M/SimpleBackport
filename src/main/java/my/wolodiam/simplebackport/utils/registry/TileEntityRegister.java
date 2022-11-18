@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -33,13 +33,24 @@ import my.wolodiam.simplebackport.api.signs.*;
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class TileEntityRegister {
     public static void registerTE() {
-        GameRegistry.registerTileEntity(SignTileEntity.class, DATA.MODID + ":sign_tile_entity_generic");
-        GameRegistry.registerTileEntity(OakHangingSignTE.class, DATA.MODID + ":oak_hanging_sign_top_full_tile_entity");
+        DATA.logger.info("Registering TileEntityes");
+        GameRegistry.registerTileEntity(OakHangingSignTE.class, DATA.MODID + ":oak_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(SpruceHangingSignTE.class, DATA.MODID + ":spruce_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(BirchHangingSignTE.class, DATA.MODID + ":birch_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(DarkOakHangingSignTE.class, DATA.MODID + ":dark_oak_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(AcaciaHangingSignTE.class, DATA.MODID + ":acacia_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(JungleHangingSignTE.class, DATA.MODID + ":jungle_hanging_sign_tile_entity");
         registerModels();
     }
     @SideOnly(Side.CLIENT)
     private static void registerModels()
     {
+        DATA.logger.info("Registering render for TileEntityes");
         ClientRegistry.bindTileEntitySpecialRenderer(OakHangingSignTE.class, new OakHangingSignRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(SpruceHangingSignTE.class, new SpruceHangingSignRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(BirchHangingSignTE.class, new BirchHangingSignRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(DarkOakHangingSignTE.class, new DarkOakHangingSignRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(AcaciaHangingSignTE.class, new AcaciaHangingSignRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(JungleHangingSignTE.class, new JungleHangingSignRenderer());
     }
 }

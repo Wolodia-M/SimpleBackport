@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -35,9 +35,9 @@ import my.wolodiam.simplebackport.utils.registry.*;
 
 public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEntity>
 {
-    private static final ResourceLocation TEXTURE_OAK_HANGING_SIGN = new ResourceLocation(DATA.MODID + ":" +"textures/sign/oak_hanging_sign_top_full.png");
-    private final HangingSignTopFullModel MODEL_OAK_HANGING_SIGN_TOP_FULL = new HangingSignTopFullModel();
-    private final HangingSignSideModel MODEL_OAK_HANGING_SIGN_SIDE = new HangingSignSideModel();
+    private static final ResourceLocation TEXTURE_OAK_HANGING_SIGN = new ResourceLocation(DATA.MODID + ":" +"textures/sign/oak_hanging_sign.png");
+    private final HangingSignTopFullModel MODEL_HANGING_SIGN_TOP_FULL = new HangingSignTopFullModel();
+    private final HangingSignSideModel MODEL_HANGING_SIGN_SIDE = new HangingSignSideModel();
     @Override
     public void render(SignTileEntity tileEntity, double x, double y, double z, float partialTicks, int destroyStage, float alpha)
     {
@@ -94,9 +94,9 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();
             GlStateManager.scale(0.6666667F, -0.6666667F, -0.6666667F);
-            this.MODEL_OAK_HANGING_SIGN_TOP_FULL.renderSign();
+            this.MODEL_HANGING_SIGN_TOP_FULL.renderSign();
             GlStateManager.rotate(90, 0, 0, 90);
-            this.MODEL_OAK_HANGING_SIGN_TOP_FULL.renderConnector();
+            this.MODEL_HANGING_SIGN_TOP_FULL.renderConnector();
             GlStateManager.popMatrix();
             FontRenderer fontrenderer = this.getFontRenderer();
             float f3 = 0.010416667F;
@@ -129,16 +129,15 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
         }
         else // Block == BlockRegister.OAK_HANGING_SIGN_SIDE
         {
-            // TODO: correctly draw chains and draw stick
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();
             GlStateManager.scale(0.6666667F, -0.6666667F, -0.6666667F);
             GlStateManager.rotate(90, 0, 90, 0);
-            this.MODEL_OAK_HANGING_SIGN_SIDE.renderSign();
-            this.MODEL_OAK_HANGING_SIGN_SIDE.renderStick();
+            this.MODEL_HANGING_SIGN_SIDE.renderSign();
+            this.MODEL_HANGING_SIGN_SIDE.renderStick();
             //GlStateManager.rotate(90, 0, 0, 90);
             GlStateManager.rotate(90, 0, 0, 90);
-            this.MODEL_OAK_HANGING_SIGN_SIDE.renderConnector();
+            this.MODEL_HANGING_SIGN_SIDE.renderConnector();
             GlStateManager.popMatrix();
             GlStateManager.rotate(90, 0, -90, 0);
             GlStateManager.translate(0.55F, 0, 0);

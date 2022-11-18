@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 */
 
 // Java package
-package my.wolodiam.simplebackport.mc1_20.blocks;
+package my.wolodiam.simplebackport.mc1_20.blocks.signs;
 import net.minecraft.block.BlockWallSign;
 // Import minecraft classes
 import net.minecraft.block.*;
@@ -32,9 +32,9 @@ import net.minecraft.tileentity.TileEntity;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.*;
 import my.wolodiam.simplebackport.api.signs.SignBlock;
-import my.wolodiam.simplebackport.mc1_20.signTE.OakHangingSignTE;
+import my.wolodiam.simplebackport.mc1_20.signTE.BirchHangingSignTE;
 
-public class OakHangingSignSideBlock extends SignBlock {
+public class BirchHangingSignSideBlock extends SignBlock {
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     protected static final AxisAlignedBB SIGN_EAST_AABB = new AxisAlignedBB(0.0D, 0.2D, 0.4D, 1.0D, 0.8D, 0.6D);
     protected static final AxisAlignedBB SIGN_WEST_AABB = new AxisAlignedBB(0.0D, 0.2D, 0.4D, 1.0D, 0.8D, 0.6D);
@@ -42,7 +42,9 @@ public class OakHangingSignSideBlock extends SignBlock {
     protected static final AxisAlignedBB SIGN_NORTH_AABB = new AxisAlignedBB(0.4D, 0.2D, 0.0D, 0.6D, 0.8D, 1.0D);
 
 
-    public OakHangingSignSideBlock(String name) {
+    public BirchHangingSignSideBlock(String name) {
+        super();
+        this.setHardness(1);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         this.setRegistryName(name);
         this.setUnlocalizedName(name);
@@ -55,7 +57,7 @@ public class OakHangingSignSideBlock extends SignBlock {
      */
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-       return new OakHangingSignTE();
+        return new BirchHangingSignTE();
     }
 
     @Override
@@ -68,7 +70,7 @@ public class OakHangingSignSideBlock extends SignBlock {
         else
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
-            return tileentity instanceof OakHangingSignTE ? ((OakHangingSignTE)tileentity).executeCommand(playerIn) : false;
+            return tileentity instanceof BirchHangingSignTE ? ((BirchHangingSignTE)tileentity).executeCommand(playerIn) : false;
         }
     }
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
@@ -127,7 +129,11 @@ public class OakHangingSignSideBlock extends SignBlock {
     @Override
     public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
     {
-        drops.add(new ItemStack(ItemRegister.OAK_HANGING_SIGN_ITEM, 1));
+        drops.add(new ItemStack(ItemRegister.BIRCH_HANGING_SIGN_ITEM, 1));
     }
 }
+
+
+
+
 

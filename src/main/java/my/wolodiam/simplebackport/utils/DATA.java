@@ -1,5 +1,5 @@
 /*
-    Simple backport of new minecraft feathures to mc 1.12.2
+    Simple backport of new minecraft features to mc 1.12.2
     Copyright (C) 2022 WolodiaM
 
     This program is free software: you can redistribute it and/or modify
@@ -23,8 +23,8 @@ import org.apache.logging.log4j.Logger;
 // Some static data (like modid)
 public class DATA {
     public static final String MODID   = "simplebackport";
-    public static final String VERSION = "0.0.1";
-    public static final String NAME    = "Simple Backport";
+    public static final String VERSION = "@VERSION@";
+    public static final String NAME    = "SimpleBackport";
     public static final String AUTHOR  = "WolodiaM";
     public static Logger logger;
 }
