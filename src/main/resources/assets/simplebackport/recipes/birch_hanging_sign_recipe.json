@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A A",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "A": {
+      "item": "simplebackport:chain"
+    },
+    "B": {
+      "item": "minecraft:planks",
+      "data": 2
+    }
+  },
+  "result": {
+    "item": "simplebackport:birch_hanging_sign",
+    "data": 0,
+    "count": 3
+  }
+}

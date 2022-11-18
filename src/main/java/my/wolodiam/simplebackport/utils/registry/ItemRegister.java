@@ -31,6 +31,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.*;
 // Import mod classes
 import my.wolodiam.simplebackport.mc1_20.items.signs.*;
+import my.wolodiam.simplebackport.mc1_16.items.*;
 import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.utils.registry.data.ItemRegistryType;
 
@@ -45,6 +46,9 @@ public class ItemRegister {
      * birch_hanging_sign
      * acacia_hanging_sign
      * jungle_hanging_sign
+     *
+     *      1.16
+     * chain
      */
     public static ArrayList<ItemRegistryType> ITEMS = new ArrayList<ItemRegistryType>();
     public static Item OAK_HANGING_SIGN_ITEM;
@@ -61,7 +65,7 @@ public class ItemRegister {
      */
     public static Item get(String id) {
         for (ItemRegistryType data : ITEMS) {
-            if (data.id == id) {
+            if (data.id.equals(id)) {
                 return data.item;
             }
         }
@@ -73,12 +77,14 @@ public class ItemRegister {
      */
     public static void init()
     {
-        ITEMS.add(new ItemRegistryType(new OakHangingSignItem("oak_hanging_sign"),          "oak_hanging_sign"));
-        ITEMS.add(new ItemRegistryType(new SpruceHangingSignItem("spruce_hanging_sign"),    "spruce_hanging_sign"));
-        ITEMS.add(new ItemRegistryType(new BirchHangingSignItem("birch_hanging_sign"),      "birch_hanging_sign"));
+        DATA.logger.info("Preinit of items");
+        ITEMS.add(new ItemRegistryType(new OakHangingSignItem("oak_hanging_sign"), "oak_hanging_sign"));
+        ITEMS.add(new ItemRegistryType(new SpruceHangingSignItem("spruce_hanging_sign"), "spruce_hanging_sign"));
+        ITEMS.add(new ItemRegistryType(new BirchHangingSignItem("birch_hanging_sign"), "birch_hanging_sign"));
         ITEMS.add(new ItemRegistryType(new DarkOakHangingSignItem("dark_oak_hanging_sign"), "dark_oak_hanging_sign"));
-        ITEMS.add(new ItemRegistryType(new AcaciaHangingSignItem("acacia_hanging_sign"),    "acacia_hanging_sign"));
+        ITEMS.add(new ItemRegistryType(new AcaciaHangingSignItem("acacia_hanging_sign"), "acacia_hanging_sign"));
         ITEMS.add(new ItemRegistryType(new JungleHangingSignItem("jungle_hanging_sign"), "jungle_hanging_sign"));
+        ITEMS.add(new ItemRegistryType(new ChainItem("chain"), "chain"));
         OAK_HANGING_SIGN_ITEM      = get("oak_hanging_sign");
         SPRUCE_HANGING_SIGN_ITEM   = get("spruce_hanging_sign");
         BIRCH_HANGING_SIGN_ITEM    = get("birch_hanging_sign");
@@ -103,6 +109,7 @@ public class ItemRegister {
      */
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+        DATA.logger.info("Registering items");
         for (ItemRegistryType data : ITEMS) {
             event.getRegistry().registerAll(data.item);
         }
@@ -115,6 +122,7 @@ public class ItemRegister {
      */
     @SubscribeEvent
     public static void registerItemsRenders(ModelRegistryEvent event) {
+        DATA.logger.info("Registering item models");
         for (ItemRegistryType data : ITEMS) {
             registerModel(data.item, 0);
         }

@@ -1,0 +1,9 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "axis=y":    { "model": "simplebackport:chain_block" },
+    "axis=z":     { "model": "simplebackport:chain_block", "x": 90 },
+    "axis=x":     { "model": "simplebackport:chain_block", "x": 90, "y": 90 },
+    "axis=none":   { "model": "simplebackport:chain_block" }
+  }
+}
