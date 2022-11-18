@@ -22,16 +22,21 @@ package my.wolodiam.simplebackport.utils.registry;
 import java.util.ArrayList;
 // Import minecraft forge classes
 import net.minecraftforge.client.event.*;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.eventhandler.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 // Import minecraft classes
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.mc1_20.blocks.signs.*;
 import my.wolodiam.simplebackport.utils.registry.data.BlockRegistryType;
+import my.wolodiam.simplebackport.mc1_16.blocks.*;
 
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class BlockRegister {
@@ -49,6 +54,9 @@ public class BlockRegister {
      * acacia_hanging_sign_side
      * jungle_hanging_sign_top_full
      * jungle_hanging_sign_side
+     *
+     *      1.16
+     * chain
      */
     public static ArrayList<BlockRegistryType> BLOCKS = new ArrayList<BlockRegistryType>();
     public static Block OAK_HANGING_SIGN_TOP_FULL;
@@ -62,7 +70,7 @@ public class BlockRegister {
 
     public static Block get(String id) {
         for (BlockRegistryType data : BLOCKS) {
-            if (data.id == id) {
+            if (data.id.equals(id)) {
                 return data.block;
             }
         }
@@ -70,6 +78,7 @@ public class BlockRegister {
     }
 
     public static void init() {
+        DATA.logger.info("Preinit of blocks");
         BLOCKS.add(new BlockRegistryType(new OakHangingSignTopFullBlock("oak_hanging_sign_top_full"), "oak_hanging_sign_top_full"));
         BLOCKS.add(new BlockRegistryType(new OakHangingSignSideBlock("oak_hanging_sign_side"), "oak_hanging_sign_side"));
         BLOCKS.add(new BlockRegistryType(new SpruceHangingSignTopFullBlock("spruce_hanging_sign_top_full"), "spruce_hanging_sign_top_full"));
@@ -82,6 +91,7 @@ public class BlockRegister {
         BLOCKS.add(new BlockRegistryType(new AcaciaHangingSignSideBlock("acacia_hanging_sign_side"), "acacia_hanging_sign_side"));
         BLOCKS.add(new BlockRegistryType(new JungleHangingSignTopFullBlock("jungle_hanging_sign_top_full"), "jungle_hanging_sign_top_full"));
         BLOCKS.add(new BlockRegistryType(new JungleHangingSignSideBlock("jungle_hanging_sign_side"), "jungle_hanging_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new ChainBlock("chain_block"), "chain_block", true));
         OAK_HANGING_SIGN_TOP_FULL      = get("oak_hanging_sign_top_full");
         OAK_HANGING_SIGN_SIDE          = get("oak_hanging_sign_side");
         SPRUCE_HANGING_SIGN_TOP_FULL   = get("spruce_hanging_sign_top_full");
@@ -94,6 +104,7 @@ public class BlockRegister {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        DATA.logger.info("Registering blocks");
         for (BlockRegistryType data : BLOCKS) {
             event.getRegistry().registerAll(data.block);
         }
@@ -106,6 +117,28 @@ public class BlockRegister {
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-
+        //clientRegister(1);
+    }
+    @SideOnly(Side.CLIENT)
+    private static void clientRegister(int action) {
+        switch (action) {
+            case 1:
+                DATA.logger.info("Registering blocks models");
+                for (BlockRegistryType data : BLOCKS) {
+                    if (data.hasBlockModel == true) {
+                        if (data.id.equals("chain_block")) {
+                                registerBlockModel(data.block, 0);
+                                registerBlockModel(data.block, 1);
+                                registerBlockModel(data.block, 2);
+                        }
+                    }
+                }
+        }
+    }
+    @SideOnly(Side.CLIENT)
+    public static void registerBlockModel(Block block, int meta)
+    {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta,
+                new ModelResourceLocation(DATA.MODID + ":" + block.getUnlocalizedName(), "inventory"));
     }
 }

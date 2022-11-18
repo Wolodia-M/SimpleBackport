@@ -41,7 +41,7 @@ public class AcaciaHangingSignItem extends Item {
         setUnlocalizedName(name);
         setRegistryName(name);
     }
-
+    @Override
     public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos blockPos, EnumHand hand, EnumFacing facing, float float1, float float2, float float3) {
         IBlockState blockState = world.getBlockState(blockPos);
         boolean blockCanBePlaces = blockState.getBlock().isReplaceable(world, blockPos);

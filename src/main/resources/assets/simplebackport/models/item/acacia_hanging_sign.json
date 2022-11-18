@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "simplebackport:items/acacia_hanging_sign"
+    "layer0": "simplebackport:items/hanging_signs/acacia_hanging_sign"
   },
 
   "display": {
