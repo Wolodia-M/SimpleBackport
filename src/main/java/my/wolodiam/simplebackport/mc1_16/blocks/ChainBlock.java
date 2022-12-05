@@ -42,14 +42,13 @@ import net.minecraft.block.BlockSlab;
 import java.util.Random;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.ItemRegister;
+import my.wolodiam.simplebackport.api.blocks.BlockWithAxises;
 
-public class ChainBlock extends Block {
-    public static final PropertyEnum<ChainBlock.EnumAxis> CHAIN_AXIS = PropertyEnum.<ChainBlock.EnumAxis>create("axis", ChainBlock.EnumAxis.class);
+public class ChainBlock extends BlockWithAxises {
     protected static final AxisAlignedBB CHAIN_AABB_Y = new AxisAlignedBB(0.6D, 0.0D, 0.6D, 0.4D, 1.0D, 0.4D);
     protected static final AxisAlignedBB CHAIN_AABB_X = new AxisAlignedBB(0.0D, 0.4D, 0.6D, 1.0D, 0.6D, 0.4D);
     protected static final AxisAlignedBB CHAIN_AABB_Z = new AxisAlignedBB(0.6D, 0.4D, 0.0D, 0.4D, 0.6D, 1.0D);
 
-    // TODO => bugfix, craft
     public ChainBlock(String name) {
         super(Material.IRON);
         this.setHardness(5.0F);
@@ -57,7 +56,6 @@ public class ChainBlock extends Block {
         this.setUnlocalizedName(name);
         this.setHarvestLevel("pickaxe", 0);
         this.setSoundType(SoundType.METAL);
-        this.setDefaultState(blockState.getBaseState().withProperty(CHAIN_AXIS, EnumAxis.Y));
         this.setLightOpacity(1);
         this.setResistance(6.0F);
         this.fullBlock = false;
@@ -68,7 +66,7 @@ public class ChainBlock extends Block {
     }
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        switch (state.getValue(CHAIN_AXIS)) {
+        switch (state.getValue(BLOCK_AXIS)) {
             case X:
                 return CHAIN_AABB_X;
             case Y:
@@ -80,30 +78,26 @@ public class ChainBlock extends Block {
         }
     }
     @Override
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-        return this.getStateFromMeta(meta).withProperty(CHAIN_AXIS, ChainBlock.EnumAxis.fromFacingAxis(facing.getAxis()));
-    }
-    @Override
     public IBlockState getStateFromMeta(int meta) {
         IBlockState state = this.getDefaultState();
         switch (meta) {
            case 0:
-               state = state.withProperty(CHAIN_AXIS, EnumAxis.Y);
+               state = state.withProperty(BLOCK_AXIS, EnumAxis.Y);
                break;
            case 1:
-               state = state.withProperty(CHAIN_AXIS, EnumAxis.X);
+               state = state.withProperty(BLOCK_AXIS, EnumAxis.X);
                break;
            case 2:
-               state = state.withProperty(CHAIN_AXIS, EnumAxis.Z);
+               state = state.withProperty(BLOCK_AXIS, EnumAxis.Z);
                break;
            default:
-               state = state.withProperty(CHAIN_AXIS, EnumAxis.NONE);
+               state = state.withProperty(BLOCK_AXIS, EnumAxis.NONE);
         }
         return state;
     }
     @Override
     public int getMetaFromState(IBlockState state) {
-        switch (state.getValue(CHAIN_AXIS)) {
+        switch (state.getValue(BLOCK_AXIS)) {
             case X:
                 return 1;
             case Y:
@@ -113,28 +107,6 @@ public class ChainBlock extends Block {
             default:
                 return 3;
         }
-    }
-    @Override
-    public IBlockState withRotation(IBlockState state, Rotation rot) {
-        switch (rot) {
-            case COUNTERCLOCKWISE_90:;
-            case CLOCKWISE_90:
-                switch (state.getValue(CHAIN_AXIS)) {
-                    case X:
-                        return state.withProperty(CHAIN_AXIS, ChainBlock.EnumAxis.Y);
-                    case Z:
-                        return state.withProperty(CHAIN_AXIS, ChainBlock.EnumAxis.X);
-                    default:
-                        return state;
-                }
-            default:
-                return state;
-        }
-    }
-    @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {CHAIN_AXIS});
     }
     @Override
     public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
@@ -157,39 +129,5 @@ public class ChainBlock extends Block {
     @Override
     public boolean isFullCube(IBlockState state) {
        return false;
-    }
-    public static enum EnumAxis implements IStringSerializable {
-        X("x"),
-        Y("y"),
-        Z("z"),
-        NONE("none");
-        private final String name;
-
-        EnumAxis(String name) {
-            this.name = name;
-        }
-
-        @Override
-        public String toString() {
-            return this.name;
-        }
-
-        public static ChainBlock.EnumAxis fromFacingAxis(EnumFacing.Axis axis) {
-            switch (axis)
-            {
-                case X:
-                    return X;
-                case Y:
-                    return Y;
-                case Z:
-                    return Z;
-                default:
-                    return NONE;
-            }
-        }
-        @Override
-        public String getName() {
-            return this.name;
-        }
     }
 }

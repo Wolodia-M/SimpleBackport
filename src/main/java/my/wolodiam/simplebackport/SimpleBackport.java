@@ -22,11 +22,13 @@ package my.wolodiam.simplebackport;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.utils.proxy.CommonProxy;
 import my.wolodiam.simplebackport.utils.registry.*;
+import my.wolodiam.simplebackport.mc1_16.commands.LocateBiome;
 
 @Mod(modid = DATA.MODID, name = DATA.NAME, version = DATA.VERSION)
 public class SimpleBackport
@@ -49,8 +51,14 @@ public class SimpleBackport
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         // some example code
-        DATA.logger.info("Init faze of Simple Backport");
+        DATA.logger.info("Init faze of SimpleBackport");
         TileEntityRegister.registerTE();
+    }
+    @Mod.EventHandler
+    public void serverInit(FMLServerStartingEvent event)
+    {
+        DATA.logger.info("Server init faze of SimpleBackport");
+        event.registerServerCommand(new LocateBiome());
     }
 }
 

@@ -1,7 +1,14 @@
+# Hanging signs
 item.oak_hanging_sign.name=Дубова підвісна табличка
 item.spruce_hanging_sign.name=Смерекова підвісна табличка
 item.birch_hanging_sign.name=Березова підвісна табличка
 item.dark_oak_hanging_sign.name=Темнодубова підвісна табличка
 item.acacia_hanging_sign.name=Акацієва підвісна табличка
 item.jungle_hanging_sign.name=Підвісна табличка з троаічного дерева
+# Chains
 item.chain.name=Ланцюг
+# Commands
+# Locatebiome
+commands.locatebiome.usage=Використання: /locatebiome {назва біому} [радіус пошукуб стандартно - 16386], підтримує біоми з модів чи /locatebiome list для показу списку біомів
+commands.locatebiome.out=%s знайдено на координатах %s
+commands.locatebiome.error=Немоливо знайти %s
