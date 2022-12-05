@@ -20,6 +20,7 @@ public class BlockWithAxises extends Block {
     public static final PropertyEnum<EnumAxis> BLOCK_AXIS = PropertyEnum.create("axis", BlockWithAxises.EnumAxis.class);
 
     public BlockWithAxises(Material material, MapColor map) {
+
         super(material, map);
         this.setDefaultState(blockState.getBaseState().withProperty(BLOCK_AXIS, BlockWithAxises.EnumAxis.Y));
 
@@ -56,6 +57,7 @@ public class BlockWithAxises extends Block {
         return this.getStateFromMeta(meta).withProperty(BLOCK_AXIS, EnumAxis.fromFacingAxis(facing.getAxis()));
     }
     public enum EnumAxis implements IStringSerializable {
+
         X("x"),
         Y("y"),
         Z("z"),

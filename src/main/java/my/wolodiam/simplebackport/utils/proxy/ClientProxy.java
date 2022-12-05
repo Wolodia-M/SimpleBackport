@@ -23,7 +23,6 @@ public class ClientProxy extends CommonProxy {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerTEModels() {
-        // TODO - proper renderer
         ClientRegistry.bindTileEntitySpecialRenderer(OakHangingSignTE.class, new HangingSignRenderer("textures/sign/oak_hanging_sign.png", BlockRegister.OAK_HANGING_SIGN_TOP_FULL, BlockRegister.OAK_HANGING_SIGN_SIDE));
         ClientRegistry.bindTileEntitySpecialRenderer(SpruceHangingSignTE.class, new HangingSignRenderer("textures/sign/spruce_hanging_sign.png", BlockRegister.SPRUCE_HANGING_SIGN_TOP_FULL, BlockRegister.SPRUCE_HANGING_SIGN_SIDE));
         ClientRegistry.bindTileEntitySpecialRenderer(BirchHangingSignTE.class, new HangingSignRenderer("textures/sign/birch_hanging_sign.png", BlockRegister.BIRCH_HANGING_SIGN_TOP_FULL, BlockRegister.BIRCH_HANGING_SIGN_SIDE));

@@ -22,6 +22,7 @@ package my.wolodiam.simplebackport.utils.registry;
 import java.util.ArrayList;
 // Import minecraft forge classes
 import net.minecraftforge.client.event.*;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.eventhandler.*;
