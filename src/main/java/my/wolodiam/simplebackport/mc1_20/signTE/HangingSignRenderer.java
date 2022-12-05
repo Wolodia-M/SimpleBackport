@@ -1,43 +1,33 @@
-/*
-    Simple backport of new minecraft features to mc 1.12.2
-    Copyright (C) 2022 WolodiaM
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
 // Java package
 package my.wolodiam.simplebackport.mc1_20.signTE;
-// import net.minecraft.client.renderer.tileentity.TileEntitySignRenderer;
-// Import minecraft classes
-import net.minecraft.client.gui.*;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.tileentity.*;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
-import net.minecraft.block.*;
-// Import Java classes
-import java.util.*;
-// Import mod classes
+
 import my.wolodiam.simplebackport.api.signs.SignTileEntity;
 import my.wolodiam.simplebackport.utils.DATA;
-import my.wolodiam.simplebackport.utils.registry.*;
+import net.minecraft.block.Block;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.GuiUtilRenderComponents;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
 
-public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEntity>
-{
-    private static final ResourceLocation TEXTURE_OAK_HANGING_SIGN = new ResourceLocation(DATA.MODID + ":" + "textures/sign/oak_hanging_sign.png");
-    private final HangingSignTopFullModel MODEL_HANGING_SIGN_TOP_FULL = new HangingSignTopFullModel();
-    private final HangingSignSideModel MODEL_HANGING_SIGN_SIDE = new HangingSignSideModel();
+import java.util.List;
+
+public class HangingSignRenderer extends TileEntitySpecialRenderer<SignTileEntity> {
+    private final ResourceLocation TEXTURE;
+    private final HangingSignTopFullModel MODEL_HANGING_SIGN_TOP_FULL;
+    private final HangingSignSideModel MODEL_HANGING_SIGN_SIDE;
+    private final Block TOP_FULL_VARIANT;
+    private final Block SIDE_VARIANT;
+
+    public HangingSignRenderer(String texture, Block top_sign, Block side_sign) {
+        TEXTURE = new ResourceLocation(DATA.MODID + ":" + texture);
+        MODEL_HANGING_SIGN_SIDE = new HangingSignSideModel();
+        MODEL_HANGING_SIGN_TOP_FULL = new HangingSignTopFullModel();
+        TOP_FULL_VARIANT = top_sign;
+        SIDE_VARIANT = side_sign;
+    }
+
     @Override
     public void render(SignTileEntity tileEntity, double x, double y, double z, float partialTicks, int destroyStage, float alpha)
     {
@@ -45,13 +35,13 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
         GlStateManager.pushMatrix();
         float f = 0.6666667F;
 
-        if (block == BlockRegister.OAK_HANGING_SIGN_TOP_FULL)
+        if (block == this.TOP_FULL_VARIANT)
         {
             GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
             float f1 = (float)(tileEntity.getBlockMetadata() * 360) / 16.0F;
             GlStateManager.rotate(-f1, 0.0F, 1.0F, 0.0F);
         }
-        else // Block == BlockRegister.OAK_HANGING_SIGN_SIDE
+        else // Block == this.SIDE_VARIANT
         {
             int k = tileEntity.getBlockMetadata();
             float f2 = 0.0F;
@@ -87,9 +77,9 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
         }
         else
         {
-            this.bindTexture(TEXTURE_OAK_HANGING_SIGN);
+            this.bindTexture(TEXTURE);
         }
-        if (block == BlockRegister.OAK_HANGING_SIGN_TOP_FULL)
+        if (block == this.TOP_FULL_VARIANT)
         {
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();
@@ -127,7 +117,7 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             GlStateManager.popMatrix();
         }
-        else // Block == BlockRegister.OAK_HANGING_SIGN_SIDE
+        else // Block == this.SIDE_VARIANT
         {
             GlStateManager.enableRescaleNormal();
             GlStateManager.pushMatrix();
@@ -177,5 +167,4 @@ public class OakHangingSignRenderer extends TileEntitySpecialRenderer<SignTileEn
         }
 
     }
-
 }

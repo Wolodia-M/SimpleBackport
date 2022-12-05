@@ -22,7 +22,6 @@ package my.wolodiam.simplebackport.utils.registry;
 import java.util.ArrayList;
 // Import minecraft forge classes
 import net.minecraftforge.client.event.*;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.eventhandler.*;
@@ -37,6 +36,8 @@ import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.mc1_20.blocks.signs.*;
 import my.wolodiam.simplebackport.utils.registry.data.BlockRegistryType;
 import my.wolodiam.simplebackport.mc1_16.blocks.*;
+// Import statics from mod classes
+import static  my.wolodiam.simplebackport.SimpleBackport.instance;
 
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class BlockRegister {
@@ -127,9 +128,9 @@ public class BlockRegister {
                 for (BlockRegistryType data : BLOCKS) {
                     if (data.hasBlockModel == true) {
                         if (data.id.equals("chain_block")) {
-                                registerBlockModel(data.block, 0);
-                                registerBlockModel(data.block, 1);
-                                registerBlockModel(data.block, 2);
+                            instance.proxy.registerBlockModel(data.block, 0);
+                            instance.proxy.registerBlockModel(data.block, 1);
+                            instance.proxy.registerBlockModel(data.block, 2);
                         }
                     }
                 }
@@ -137,11 +138,5 @@ public class BlockRegister {
             default:
                 throw new IllegalStateException("Unexpected value: " + action);
         }
-    }
-    @SideOnly(Side.CLIENT)
-    public static void registerBlockModel(Block block, int meta)
-    {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta,
-                new ModelResourceLocation(DATA.MODID + ":" + block.getUnlocalizedName(), "inventory"));
     }
 }

@@ -41,15 +41,15 @@ public class ChainItem extends Item {
                     switch (facing) {
                         case DOWN:
                         case UP:
-                            worldIn.setBlockState(blockPos, BlockRegister.get("chain_block").getDefaultState().withProperty(ChainBlock.CHAIN_AXIS, ChainBlock.EnumAxis.Y), pos1);
+                            worldIn.setBlockState(blockPos, BlockRegister.get("chain_block").getDefaultState().withProperty(ChainBlock.BLOCK_AXIS, ChainBlock.EnumAxis.Y), pos1);
                             return EnumActionResult.SUCCESS;
                         case EAST:
                         case WEST:
-                            worldIn.setBlockState(blockPos, BlockRegister.get("chain_block").getDefaultState().withProperty(ChainBlock.CHAIN_AXIS, ChainBlock.EnumAxis.X), pos1);
+                            worldIn.setBlockState(blockPos, BlockRegister.get("chain_block").getDefaultState().withProperty(ChainBlock.BLOCK_AXIS, ChainBlock.EnumAxis.X), pos1);
                             return EnumActionResult.SUCCESS;
                         case SOUTH:
                         case NORTH:
-                            worldIn.setBlockState(blockPos, BlockRegister.get("chain_block").getDefaultState().withProperty(ChainBlock.CHAIN_AXIS, ChainBlock.EnumAxis.Z), pos1);
+                            worldIn.setBlockState(blockPos, BlockRegister.get("chain_block").getDefaultState().withProperty(ChainBlock.BLOCK_AXIS, ChainBlock.EnumAxis.Z), pos1);
                             return EnumActionResult.SUCCESS;
                     }
                 }
