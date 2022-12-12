@@ -21,8 +21,6 @@ package my.wolodiam.simplebackport.utils.registry;
 // Import java classes
 import java.util.ArrayList;
 // Import minecraft classes
-import my.wolodiam.simplebackport.mc1_14.items.signs.OakSignItem;
-import my.wolodiam.simplebackport.mc1_14.items.signs.SpruceSignItem;
 import net.minecraft.item.Item;
 // Import forge classes
 import net.minecraftforge.client.event.*;
@@ -33,6 +31,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 // Import mod classes
 import my.wolodiam.simplebackport.mc1_20.items.signs.*;
+import my.wolodiam.simplebackport.mc1_14.items.signs.*;
 import my.wolodiam.simplebackport.mc1_16.items.*;
 import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.utils.registry.data.ItemRegistryType;
@@ -98,6 +97,7 @@ public class ItemRegister {
         ITEMS.add(new ItemRegistryType(new ChainItem("chain"), "chain"));
         ITEMS.add(new ItemRegistryType(new OakSignItem("oak_sign"), "oak_sign"));
         ITEMS.add(new ItemRegistryType(new SpruceSignItem("spruce_sign"), "spruce_sign"));
+        ITEMS.add(new ItemRegistryType(new AcaciaSignItem("acacia_sign"), "acacia_sign"));
         OAK_HANGING_SIGN_ITEM      = get("oak_hanging_sign");
         SPRUCE_HANGING_SIGN_ITEM   = get("spruce_hanging_sign");
         BIRCH_HANGING_SIGN_ITEM    = get("birch_hanging_sign");

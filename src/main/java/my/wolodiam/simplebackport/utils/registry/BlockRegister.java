@@ -21,9 +21,6 @@ package my.wolodiam.simplebackport.utils.registry;
 // Import Java classes
 import java.util.ArrayList;
 // Import minecraft forge classes
-import my.wolodiam.simplebackport.mc1_14.blocks.signs.OakSignTop;
-import my.wolodiam.simplebackport.mc1_14.blocks.signs.SpruceSignSide;
-import my.wolodiam.simplebackport.mc1_14.blocks.signs.SpruceSignTop;
 import net.minecraftforge.client.event.*;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.*;
@@ -38,9 +35,9 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.utils.registry.data.BlockRegistryType;
-import my.wolodiam.simplebackport.mc1_14.blocks.signs.OakSignSide;
 import my.wolodiam.simplebackport.mc1_16.blocks.*;
 import my.wolodiam.simplebackport.mc1_20.blocks.signs.*;
+import my.wolodiam.simplebackport.mc1_14.blocks.signs.*;
 // Import statics from mod classes
 import static  my.wolodiam.simplebackport.SimpleBackport.instance;
 
@@ -116,6 +113,8 @@ public class BlockRegister {
         BLOCKS.add(new BlockRegistryType(new OakSignTop("oak_sign_top"), "oak_sign_top"));
         BLOCKS.add(new BlockRegistryType(new SpruceSignSide("spruce_sign_side"), "spruce_sign_side"));
         BLOCKS.add(new BlockRegistryType(new SpruceSignTop("spruce_sign_top"), "spruce_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new AcaciaSignSide("acacia_sign_side"), "acacia_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new AcaciaSignTop("acacia_sign_top"), "acacia_sign_top"));
         OAK_HANGING_SIGN_TOP_FULL      = get("oak_hanging_sign_top_full");
         OAK_HANGING_SIGN_SIDE          = get("oak_hanging_sign_side");
         SPRUCE_HANGING_SIGN_TOP_FULL   = get("spruce_hanging_sign_top_full");

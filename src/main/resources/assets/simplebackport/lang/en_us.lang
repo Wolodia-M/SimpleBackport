@@ -7,10 +7,12 @@ item.acacia_hanging_sign.name=Acacia hanging sign
 item.jungle_hanging_sign.name=Jungle hanging sign
 # Signs
 item.oak_sign.name=Oak sign
+item.spruce_sign.name=Spruce sign
+item.acacia_sign.name=Acacia sign
 # Chain
 item.chain.name=Chain
 # Commands
 # Locatebiome
-commands.locatebiome.usage=Call /locatebiome {biome name} [search radius, standart - 16386], support modded biomes, or /locatebiome list for biome list
+commands.locatebiome.usage=Call /locatebiome {biome name}, support modded biomes, or /locatebiome list for biome list
 commands.locatebiome.out=%s located at %s
 commands.locatebiome.error=Cannot find %s

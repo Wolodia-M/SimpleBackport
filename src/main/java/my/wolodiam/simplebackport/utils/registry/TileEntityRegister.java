@@ -40,10 +40,10 @@ public class TileEntityRegister {
         GameRegistry.registerTileEntity(JungleHangingSignTE.class, DATA.MODID + ":jungle_hanging_sign_tile_entity");
         GameRegistry.registerTileEntity(OakSignTE.class, DATA.MODID + ":oak_sign_tile_entity");
         registerTEInternall(AcaciaSignTE.class, "acacia_sign_tile_entity");
-        registerTEInternall(BirchSignTE.class, "acacia_sign_tile_entity");
-        registerTEInternall(DarkOakSignTE.class, "acacia_sign_tile_entity");
-        registerTEInternall(JungleSignTE.class, "acacia_sign_tile_entity");
-        registerTEInternall(SpruceSignTE.class, "acacia_sign_tile_entity");
+        registerTEInternall(BirchSignTE.class, "birch_sign_tile_entity");
+        registerTEInternall(DarkOakSignTE.class, "dark_oak_sign_tile_entity");
+        registerTEInternall(JungleSignTE.class, "jungle_sign_tile_entity");
+        registerTEInternall(SpruceSignTE.class, "spruce_sign_tile_entity");
         registerModels();
     }
     private static void registerTEInternall(Class<? extends net.minecraft.tileentity.TileEntity> te, String id) {
