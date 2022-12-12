@@ -5,6 +5,8 @@ item.birch_hanging_sign.name=Birch hanging sign
 item.dark_oak_hanging_sign.name=Dark oak hanging sign
 item.acacia_hanging_sign.name=Acacia hanging sign
 item.jungle_hanging_sign.name=Jungle hanging sign
+# Signs
+item.oak_sign.name=Oak sign
 # Chain
 item.chain.name=Chain
 # Commands

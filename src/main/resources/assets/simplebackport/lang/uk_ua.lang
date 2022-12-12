@@ -5,6 +5,8 @@ item.birch_hanging_sign.name=Березова підвісна табличка
 item.dark_oak_hanging_sign.name=Темнодубова підвісна табличка
 item.acacia_hanging_sign.name=Акацієва підвісна табличка
 item.jungle_hanging_sign.name=Підвісна табличка з троаічного дерева
+# Signs
+item.oak_sign.name=Дубова табличка
 # Chains
 item.chain.name=Ланцюг
 # Commands

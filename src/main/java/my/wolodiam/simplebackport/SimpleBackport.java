@@ -44,6 +44,7 @@ public class SimpleBackport
     {
         DATA.logger = event.getModLog();
         DATA.logger.info("Preinit faze of Simple Backport");
+        proxy.preInit(event);
         ItemRegister.init();
         BlockRegister.init();
     }

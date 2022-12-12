@@ -16,30 +16,9 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 // Java package
-package my.wolodiam.simplebackport.utils.proxy;
-// Import minecraft classes
-import net.minecraft.block.Block;
-// Import minecraftforge classes
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-// Import Java classes
-import java.io.File;
+package my.wolodiam.simplebackport.mc1_14.signTE;
 // Import mod classes
-import my.wolodiam.simplebackport.utils.config.ConfigHandler;
+import my.wolodiam.simplebackport.api.signs.SignTileEntity;
 
-public class CommonProxy {
-    public static ConfigHandler config;
-    public void preInit(FMLPreInitializationEvent event) {
-
-    }
-    public void Init() {
-
-    }
-    public void postInit() {
-
-    }
-    public void registerTEModels(){}
-    public void registerItemModel(Item item, int meta, String variant){}
-    public void registerItemModel(Item item) {}
-    public void registerBlockModel(Block block, int meta){}
+public class JungleSignTE extends SignTileEntity  {
 }

@@ -21,11 +21,10 @@ package my.wolodiam.simplebackport.utils.registry;
 // Import minecraft forge classes
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.registry.*;
-import net.minecraftforge.fml.relauncher.*;
-// Import minecraft classes
 // Import mod classes
 import my.wolodiam.simplebackport.utils.DATA;
 import my.wolodiam.simplebackport.mc1_20.signTE.*;
+import my.wolodiam.simplebackport.mc1_14.signTE.*;
 // Import statics from mod classes
 import static my.wolodiam.simplebackport.SimpleBackport.instance;
 
@@ -39,10 +38,18 @@ public class TileEntityRegister {
         GameRegistry.registerTileEntity(DarkOakHangingSignTE.class, DATA.MODID + ":dark_oak_hanging_sign_tile_entity");
         GameRegistry.registerTileEntity(AcaciaHangingSignTE.class, DATA.MODID + ":acacia_hanging_sign_tile_entity");
         GameRegistry.registerTileEntity(JungleHangingSignTE.class, DATA.MODID + ":jungle_hanging_sign_tile_entity");
+        GameRegistry.registerTileEntity(OakSignTE.class, DATA.MODID + ":oak_sign_tile_entity");
+        registerTEInternall(AcaciaSignTE.class, "acacia_sign_tile_entity");
+        registerTEInternall(BirchSignTE.class, "acacia_sign_tile_entity");
+        registerTEInternall(DarkOakSignTE.class, "acacia_sign_tile_entity");
+        registerTEInternall(JungleSignTE.class, "acacia_sign_tile_entity");
+        registerTEInternall(SpruceSignTE.class, "acacia_sign_tile_entity");
         registerModels();
     }
-    private static void registerModels()
-    {
+    private static void registerTEInternall(Class<? extends net.minecraft.tileentity.TileEntity> te, String id) {
+        GameRegistry.registerTileEntity(te, DATA.MODID + ":" + id);
+    }
+    private static void registerModels() {
         DATA.logger.info("Registering render for TileEntityes");
         instance.proxy.registerTEModels();
     }
