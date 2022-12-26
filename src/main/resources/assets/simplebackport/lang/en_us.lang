@@ -9,6 +9,9 @@ item.jungle_hanging_sign.name=Jungle hanging sign
 item.oak_sign.name=Oak sign
 item.spruce_sign.name=Spruce sign
 item.acacia_sign.name=Acacia sign
+item.birch_sign.name=Birch sign
+item.dark_oak_sign.name=Dark oak sign
+item.jungle_sign.name=Jungle sign
 # Chain
 item.chain.name=Chain
 # Commands

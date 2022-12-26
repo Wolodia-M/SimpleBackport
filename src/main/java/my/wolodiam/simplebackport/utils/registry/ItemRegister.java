@@ -98,6 +98,9 @@ public class ItemRegister {
         ITEMS.add(new ItemRegistryType(new OakSignItem("oak_sign"), "oak_sign"));
         ITEMS.add(new ItemRegistryType(new SpruceSignItem("spruce_sign"), "spruce_sign"));
         ITEMS.add(new ItemRegistryType(new AcaciaSignItem("acacia_sign"), "acacia_sign"));
+        ITEMS.add(new ItemRegistryType(new BirchSignItem("birch_sign"), "birch_sign"));
+        ITEMS.add(new ItemRegistryType(new DarkOakSignItem("dark_oak_sign"), "dark_oak_sign"));
+        ITEMS.add(new ItemRegistryType(new JungleSignItem("jungle_sign"), "jungle_sign"));
         OAK_HANGING_SIGN_ITEM      = get("oak_hanging_sign");
         SPRUCE_HANGING_SIGN_ITEM   = get("spruce_hanging_sign");
         BIRCH_HANGING_SIGN_ITEM    = get("birch_hanging_sign");

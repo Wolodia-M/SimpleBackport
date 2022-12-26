@@ -108,7 +108,7 @@ public class BiomeFinderWorker implements WorldWorkerManager.IWorker {
             BlockPos pos = new BlockPos(x, this.search_world.getHeight(), z);
             // Get biome at this position
             Biome biome = this.search_world.getBiomeForCoordsBody(pos);
-            // If biome math search biome
+            // If biome equal search biome
             if (biome == this.search_biome) {
                 // Return coordinates of biome
                 this.returned(true);

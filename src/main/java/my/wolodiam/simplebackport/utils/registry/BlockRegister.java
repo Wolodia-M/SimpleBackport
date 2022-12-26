@@ -115,6 +115,12 @@ public class BlockRegister {
         BLOCKS.add(new BlockRegistryType(new SpruceSignTop("spruce_sign_top"), "spruce_sign_top"));
         BLOCKS.add(new BlockRegistryType(new AcaciaSignSide("acacia_sign_side"), "acacia_sign_side"));
         BLOCKS.add(new BlockRegistryType(new AcaciaSignTop("acacia_sign_top"), "acacia_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new BirchSignSide("birch_sign_side"), "birch_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new BirchSignTop("birch_sign_top"), "birch_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new DarkOakSignSide("dark_oak_sign_side"), "dark_oak_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new DarkOakSignTop("dark_oak_sign_top"), "dark_oak_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new JungleSignSide("jungle_sign_side"), "jungle_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new JungleSignTop("jungle_sign_top"), "jungle_sign_top"));
         OAK_HANGING_SIGN_TOP_FULL      = get("oak_hanging_sign_top_full");
         OAK_HANGING_SIGN_SIDE          = get("oak_hanging_sign_side");
         SPRUCE_HANGING_SIGN_TOP_FULL   = get("spruce_hanging_sign_top_full");
