@@ -15,7 +15,6 @@ import net.minecraft.world.World;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.registry.BlockRegister;
 import my.wolodiam.simplebackport.mc1_16.blocks.ChainBlock;
-import my.wolodiam.simplebackport.utils.ChatUtils;
 
 public class ChainItem extends Item {
     public ChainItem(String name) {

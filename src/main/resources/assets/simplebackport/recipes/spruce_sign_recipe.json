@@ -1,0 +1,22 @@
+ {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    " B "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:planks",
+      "data": 1
+    },
+    "B": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "simplebackport:spruce_sign",
+    "data": 0,
+    "count": 3
+  }
+}

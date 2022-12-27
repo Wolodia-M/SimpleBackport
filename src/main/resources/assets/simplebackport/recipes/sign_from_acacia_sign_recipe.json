@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "simplebackport:acacia_sign"
+    }
+  ],
+  "result": {
+    "item": "minecraft:sign",
+    "data": 0,
+    "count": 1
+  }
+}

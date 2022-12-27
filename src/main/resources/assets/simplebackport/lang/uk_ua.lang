@@ -4,11 +4,18 @@ item.spruce_hanging_sign.name=Смерекова підвісна табличк
 item.birch_hanging_sign.name=Березова підвісна табличка
 item.dark_oak_hanging_sign.name=Темнодубова підвісна табличка
 item.acacia_hanging_sign.name=Акацієва підвісна табличка
-item.jungle_hanging_sign.name=Підвісна табличка з троаічного дерева
+item.jungle_hanging_sign.name=Підвісна табличка з тропічного дерева
+# Signs
+item.oak_sign.name=Дубова табличка
+item.spruce_sign.name=Смерекова табличка
+item.acacia_sign.name=Акацієва табличка
+item.birch_sign.name=Березова табличка
+item.dark_oak_sign.name=Темнодубова табличка
+item.jungle_sign.name=Табличка з тропічного дерева
 # Chains
 item.chain.name=Ланцюг
 # Commands
 # Locatebiome
-commands.locatebiome.usage=Використання: /locatebiome {назва біому} [радіус пошукуб стандартно - 16386], підтримує біоми з модів чи /locatebiome list для показу списку біомів
+commands.locatebiome.usage=Використання: /locatebiome {назва біому}, підтримує біоми з модів чи /locatebiome list для показу списку біомів
 commands.locatebiome.out=%s знайдено на координатах %s
 commands.locatebiome.error=Немоливо знайти %s

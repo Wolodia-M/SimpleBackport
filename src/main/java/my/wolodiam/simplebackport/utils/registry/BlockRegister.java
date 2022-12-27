@@ -34,9 +34,10 @@ import net.minecraft.item.Item;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 // Import mod classes
 import my.wolodiam.simplebackport.utils.*;
-import my.wolodiam.simplebackport.mc1_20.blocks.signs.*;
 import my.wolodiam.simplebackport.utils.registry.data.BlockRegistryType;
 import my.wolodiam.simplebackport.mc1_16.blocks.*;
+import my.wolodiam.simplebackport.mc1_20.blocks.signs.*;
+import my.wolodiam.simplebackport.mc1_14.blocks.signs.*;
 // Import statics from mod classes
 import static  my.wolodiam.simplebackport.SimpleBackport.instance;
 
@@ -59,6 +60,20 @@ public class BlockRegister {
      *
      *      1.16
      * chain
+     *
+     *      1.14
+     * acacia_sign_side
+     * acacia_sign_top
+     * birch_sign_side
+     * birch_sign_top
+     * dark_oak_sign_side
+     * dark_oak_sign_top
+     * jungle_sign_side
+     * jubgle_sign_top
+     * oak_sign_side
+     * oak_sign_top
+     * spruce_sign_side
+     * spruce_sign_top
      */
     public static ArrayList<BlockRegistryType> BLOCKS = new ArrayList<BlockRegistryType>();
     public static Block OAK_HANGING_SIGN_TOP_FULL;
@@ -94,6 +109,18 @@ public class BlockRegister {
         BLOCKS.add(new BlockRegistryType(new JungleHangingSignTopFullBlock("jungle_hanging_sign_top_full"), "jungle_hanging_sign_top_full"));
         BLOCKS.add(new BlockRegistryType(new JungleHangingSignSideBlock("jungle_hanging_sign_side"), "jungle_hanging_sign_side"));
         BLOCKS.add(new BlockRegistryType(new ChainBlock("chain_block"), "chain_block", true));
+        BLOCKS.add(new BlockRegistryType(new OakSignSide("oak_sign_side"), "oak_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new OakSignTop("oak_sign_top"), "oak_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new SpruceSignSide("spruce_sign_side"), "spruce_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new SpruceSignTop("spruce_sign_top"), "spruce_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new AcaciaSignSide("acacia_sign_side"), "acacia_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new AcaciaSignTop("acacia_sign_top"), "acacia_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new BirchSignSide("birch_sign_side"), "birch_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new BirchSignTop("birch_sign_top"), "birch_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new DarkOakSignSide("dark_oak_sign_side"), "dark_oak_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new DarkOakSignTop("dark_oak_sign_top"), "dark_oak_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new JungleSignSide("jungle_sign_side"), "jungle_sign_side"));
+        BLOCKS.add(new BlockRegistryType(new JungleSignTop("jungle_sign_top"), "jungle_sign_top"));
         OAK_HANGING_SIGN_TOP_FULL      = get("oak_hanging_sign_top_full");
         OAK_HANGING_SIGN_SIDE          = get("oak_hanging_sign_side");
         SPRUCE_HANGING_SIGN_TOP_FULL   = get("spruce_hanging_sign_top_full");
@@ -130,8 +157,6 @@ public class BlockRegister {
                     if (data.hasBlockModel == true) {
                         if (data.id.equals("chain_block")) {
                             instance.proxy.registerBlockModel(data.block, 0);
-                            instance.proxy.registerBlockModel(data.block, 1);
-                            instance.proxy.registerBlockModel(data.block, 2);
                         }
                     }
                 }

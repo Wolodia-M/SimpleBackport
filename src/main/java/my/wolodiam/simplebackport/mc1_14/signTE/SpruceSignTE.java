@@ -15,22 +15,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-
 // Java package
-package my.wolodiam.simplebackport.utils;
-// Import minecraft classes
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.text.TextComponentString;
+package my.wolodiam.simplebackport.mc1_14.signTE;
+// Import mod classes
+import my.wolodiam.simplebackport.api.signs.SignTileEntity;
 
-public class ChatUtils {
-    /**
-     * Print message to chat
-     *
-     * @param player player (EntityPlayer)
-     * @param msg Message (String)
-     */
-    public static void writeToChat(EntityPlayer player, String msg)
-    {
-        player.sendMessage(new TextComponentString(msg));
-    }
+public class SpruceSignTE extends SignTileEntity  {
 }
