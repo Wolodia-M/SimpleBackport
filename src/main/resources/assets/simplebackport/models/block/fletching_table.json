@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:blocks/planks_birch",
+    "east": "simplebackport:blocks/crafters/fletching_table_side",
+    "north": "simplebackport:blocks/crafters/fletching_table_front",
+    "particle": "simplebackport:blocks/crafters/fletching_table_front",
+    "south": "simplebackport:blocks/crafters/fletching_table_front",
+    "up": "simplebackport:blocks/crafters/fletching_table_top",
+    "west": "simplebackport:blocks/crafters/fletching_table_side"
+  }
+}

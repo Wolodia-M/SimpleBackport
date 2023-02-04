@@ -1,3 +1,4 @@
+# Items
 # Hanging signs
 item.oak_hanging_sign.name=Oak hanging sign
 item.spruce_hanging_sign.name=Spruce hanging sign
@@ -14,6 +15,8 @@ item.dark_oak_sign.name=Dark oak sign
 item.jungle_sign.name=Jungle sign
 # Chain
 item.chain.name=Chain
+# Crafters
+item.fletching_table.name=Fletching table
 # Commands
 # Locatebiome
 commands.locatebiome.usage=Call /locatebiome {biome name}, support modded biomes, or /locatebiome list for biome list

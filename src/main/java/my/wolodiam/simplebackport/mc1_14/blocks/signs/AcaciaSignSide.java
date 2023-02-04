@@ -18,7 +18,6 @@
 // Java package
 package my.wolodiam.simplebackport.mc1_14.blocks.signs;
 // Import minecraft classes
-import my.wolodiam.simplebackport.utils.registry.ItemRegister;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.properties.IProperty;
@@ -33,8 +32,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.block.BlockWallSign;
 // Import mod classes
+import my.wolodiam.simplebackport.utils.registry.ItemRegister;
 import my.wolodiam.simplebackport.api.signs.SignBlock;
 import my.wolodiam.simplebackport.mc1_14.signTE.AcaciaSignTE;
 

@@ -21,61 +21,38 @@ package my.wolodiam.simplebackport.api.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
 // Import Java classes
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import org.jetbrains.annotations.NotNull;
 
 public class BlockWithRotation extends Block {
-    public static final PropertyEnum<EnumState> BLOCK_ROTATION = PropertyEnum.create("rotation", EnumState.class);
+    public static final PropertyInteger BLOCK_ROTATION = PropertyInteger.create("rotation", 0, 3);
     public BlockWithRotation(Material mat) {
         super(mat);
-        this.setDefaultState(blockState.getBaseState().withProperty(BLOCK_ROTATION, EnumState.NORTH));
+        this.setDefaultState(blockState.getBaseState().withProperty(BLOCK_ROTATION, 0));
     }
-    public enum EnumState implements IStringSerializable {
-        NORTH("north"),
-        SOUTH("south"),
-        EAST("east"),
-        WEST("west");
-        private String name;
-        EnumState(String name) {
-            this.name = name;
-        }
-        public @NotNull BlockWithRotation.EnumState fromFacing(@NotNull EnumFacing facing) {
-            EnumState st = null;
-            switch (facing) {
-                case SOUTH:
-                    st = NORTH;
-                    break;
-                case NORTH:
-                    st = SOUTH;
-                    break;
-                case EAST:
-                    st = WEST;
-                    break;
-                case WEST:
-                    st = EAST;
-                    break;
-                case UP:
-                    st = NORTH;
-                    break;
-                case DOWN:
-                    st = NORTH;
-                    break;
-                default:
-                    st = NORTH;
-                    break;
-            }
-            return st;
-        }
-        @Override
-        public String getName() {
-            return this.name;
-        }
-        @Override
-        public String toString() {
-            return this.name;
-        }
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(BLOCK_ROTATION, Integer.valueOf(meta));
+    }
+
+    public int getMetaFromState(IBlockState state)
+    {
+        return ((Integer)state.getValue(BLOCK_ROTATION)).intValue();
+    }
+
+    public IBlockState withRotation(IBlockState state, Rotation rot)
+    {
+        return state.withProperty(BLOCK_ROTATION, Integer.valueOf(rot.rotate(state.getValue(BLOCK_ROTATION), 4)));
+    }
+
+    public IBlockState withMirror(IBlockState state, Mirror mirrorIn)
+    {
+        return state.withProperty(BLOCK_ROTATION, Integer.valueOf(mirrorIn.mirrorRotation(state.getValue(BLOCK_ROTATION), 2)));
     }
 }
 

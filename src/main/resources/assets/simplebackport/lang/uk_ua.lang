@@ -1,3 +1,4 @@
+# Items
 # Hanging signs
 item.oak_hanging_sign.name=Дубова підвісна табличка
 item.spruce_hanging_sign.name=Смерекова підвісна табличка
@@ -14,6 +15,8 @@ item.dark_oak_sign.name=Темнодубова табличка
 item.jungle_sign.name=Табличка з тропічного дерева
 # Chains
 item.chain.name=Ланцюг
+# Crafters
+item.fletching_table.name=Стіл лучника
 # Commands
 # Locatebiome
 commands.locatebiome.usage=Використання: /locatebiome {назва біому}, підтримує біоми з модів чи /locatebiome list для показу списку біомів

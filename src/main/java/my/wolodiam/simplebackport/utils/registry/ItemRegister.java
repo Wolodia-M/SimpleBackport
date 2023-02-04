@@ -33,6 +33,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import my.wolodiam.simplebackport.mc1_20.items.signs.*;
 import my.wolodiam.simplebackport.mc1_14.items.signs.*;
 import my.wolodiam.simplebackport.mc1_16.items.*;
+import my.wolodiam.simplebackport.mc1_14.items.crafters.*;
 import my.wolodiam.simplebackport.utils.*;
 import my.wolodiam.simplebackport.utils.registry.data.ItemRegistryType;
 import static my.wolodiam.simplebackport.SimpleBackport.instance;
@@ -59,6 +60,7 @@ public class ItemRegister {
      * jungle_sign
      * oak_sign
      * spruce_sign
+     * fletching_table
      */
     public static ArrayList<ItemRegistryType> ITEMS = new ArrayList<ItemRegistryType>();
     public static Item OAK_HANGING_SIGN_ITEM;
@@ -101,6 +103,7 @@ public class ItemRegister {
         ITEMS.add(new ItemRegistryType(new BirchSignItem("birch_sign"), "birch_sign"));
         ITEMS.add(new ItemRegistryType(new DarkOakSignItem("dark_oak_sign"), "dark_oak_sign"));
         ITEMS.add(new ItemRegistryType(new JungleSignItem("jungle_sign"), "jungle_sign"));
+        ITEMS.add(new ItemRegistryType(new FlethingTableItem("fletching_table"), "fletching_table"));
         OAK_HANGING_SIGN_ITEM      = get("oak_hanging_sign");
         SPRUCE_HANGING_SIGN_ITEM   = get("spruce_hanging_sign");
         BIRCH_HANGING_SIGN_ITEM    = get("birch_hanging_sign");

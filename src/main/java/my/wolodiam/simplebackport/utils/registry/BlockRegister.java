@@ -38,6 +38,7 @@ import my.wolodiam.simplebackport.utils.registry.data.BlockRegistryType;
 import my.wolodiam.simplebackport.mc1_16.blocks.*;
 import my.wolodiam.simplebackport.mc1_20.blocks.signs.*;
 import my.wolodiam.simplebackport.mc1_14.blocks.signs.*;
+import my.wolodiam.simplebackport.mc1_14.blocks.crafters.*;
 // Import statics from mod classes
 import static  my.wolodiam.simplebackport.SimpleBackport.instance;
 
@@ -45,6 +46,7 @@ import static  my.wolodiam.simplebackport.SimpleBackport.instance;
 public class BlockRegister {
     /*
      *      1.20
+     * // Signs
      * oak_hanging_sign_top_full
      * oak_hanging_sign_side
      * dark_oak_hanging_sign_top_full
@@ -59,9 +61,11 @@ public class BlockRegister {
      * jungle_hanging_sign_side
      *
      *      1.16
+     * // Misc
      * chain
      *
      *      1.14
+     * // Signs
      * acacia_sign_side
      * acacia_sign_top
      * birch_sign_side
@@ -69,11 +73,13 @@ public class BlockRegister {
      * dark_oak_sign_side
      * dark_oak_sign_top
      * jungle_sign_side
-     * jubgle_sign_top
+     * jungle_sign_top
      * oak_sign_side
      * oak_sign_top
      * spruce_sign_side
      * spruce_sign_top
+     * // Crafters
+     * fletching_table
      */
     public static ArrayList<BlockRegistryType> BLOCKS = new ArrayList<BlockRegistryType>();
     public static Block OAK_HANGING_SIGN_TOP_FULL;
@@ -121,6 +127,7 @@ public class BlockRegister {
         BLOCKS.add(new BlockRegistryType(new DarkOakSignTop("dark_oak_sign_top"), "dark_oak_sign_top"));
         BLOCKS.add(new BlockRegistryType(new JungleSignSide("jungle_sign_side"), "jungle_sign_side"));
         BLOCKS.add(new BlockRegistryType(new JungleSignTop("jungle_sign_top"), "jungle_sign_top"));
+        BLOCKS.add(new BlockRegistryType(new FletchingTable("fletching_table"), "fletching_table"));
         OAK_HANGING_SIGN_TOP_FULL      = get("oak_hanging_sign_top_full");
         OAK_HANGING_SIGN_SIDE          = get("oak_hanging_sign_side");
         SPRUCE_HANGING_SIGN_TOP_FULL   = get("spruce_hanging_sign_top_full");
