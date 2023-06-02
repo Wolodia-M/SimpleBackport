@@ -42,18 +42,16 @@ import static my.wolodiam.simplebackport.SimpleBackport.instance;
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class ItemRegister {
     /*
-     *      1.20
+     &      1.20
      * oak_hanging_sign
      * spruce_hanging_sign
      * dark_oak_hanging_sign
      * birch_hanging_sign
      * acacia_hanging_sign
      * jungle_hanging_sign
-     *
-     *      1.16
+     &      1.16
      * chain
-     *
-     *      1.14
+     &      1.14
      * acacia_sign
      * birch_sign
      * dark_oak_sign

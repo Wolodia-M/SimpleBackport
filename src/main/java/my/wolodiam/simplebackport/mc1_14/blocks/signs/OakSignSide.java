@@ -33,7 +33,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.block.BlockWallSign;
 // Import mod classes
 import my.wolodiam.simplebackport.api.signs.SignBlock;
 import my.wolodiam.simplebackport.mc1_14.signTE.OakSignTE;

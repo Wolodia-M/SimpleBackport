@@ -45,8 +45,8 @@ import static  my.wolodiam.simplebackport.SimpleBackport.instance;
 @Mod.EventBusSubscriber(modid = DATA.MODID)
 public class BlockRegister {
     /*
-     *      1.20
-     * // Signs
+     &      1.20
+     ^   Signs
      * oak_hanging_sign_top_full
      * oak_hanging_sign_side
      * dark_oak_hanging_sign_top_full
@@ -59,13 +59,11 @@ public class BlockRegister {
      * acacia_hanging_sign_side
      * jungle_hanging_sign_top_full
      * jungle_hanging_sign_side
-     *
-     *      1.16
-     * // Misc
+     &      1.16
+     ^   Misc
      * chain
-     *
-     *      1.14
-     * // Signs
+     &     1.14
+     ^   Signs
      * acacia_sign_side
      * acacia_sign_top
      * birch_sign_side
@@ -78,7 +76,7 @@ public class BlockRegister {
      * oak_sign_top
      * spruce_sign_side
      * spruce_sign_top
-     * // Crafters
+     ^   Crafters
      * fletching_table
      */
     public static ArrayList<BlockRegistryType> BLOCKS = new ArrayList<BlockRegistryType>();

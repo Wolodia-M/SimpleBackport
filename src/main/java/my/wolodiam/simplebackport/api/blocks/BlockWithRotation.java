@@ -20,15 +20,10 @@ package my.wolodiam.simplebackport.api.blocks;
 // Import minecraft classes
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.IStringSerializable;
-// Import Java classes
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
-import org.jetbrains.annotations.NotNull;
 
 public class BlockWithRotation extends Block {
     public static final PropertyInteger BLOCK_ROTATION = PropertyInteger.create("rotation", 0, 3);

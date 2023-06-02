@@ -20,11 +20,9 @@ package my.wolodiam.simplebackport.mc1_14.blocks.crafters;
 // Import minecraft classes
 import my.wolodiam.simplebackport.SimpleBackport;
 import my.wolodiam.simplebackport.utils.DATA;
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -54,8 +52,6 @@ public class FletchingTable extends BlockWithRotation {
         this.setHardness(2.5F);
         this.setResistance(2.5F);
     }
-
-
     protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {BLOCK_ROTATION});

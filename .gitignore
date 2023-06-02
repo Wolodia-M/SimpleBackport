@@ -17,6 +17,9 @@ out
 build
 .gradle
 
+# VSCode
+.vscode
+
 # other
 eclipse
 run
