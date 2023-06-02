@@ -1,3 +1,4 @@
+# Items
 # Hanging signs
 item.oak_hanging_sign.name=Oak hanging sign
 item.spruce_hanging_sign.name=Spruce hanging sign
@@ -5,10 +6,19 @@ item.birch_hanging_sign.name=Birch hanging sign
 item.dark_oak_hanging_sign.name=Dark oak hanging sign
 item.acacia_hanging_sign.name=Acacia hanging sign
 item.jungle_hanging_sign.name=Jungle hanging sign
+# Signs
+item.oak_sign.name=Oak sign
+item.spruce_sign.name=Spruce sign
+item.acacia_sign.name=Acacia sign
+item.birch_sign.name=Birch sign
+item.dark_oak_sign.name=Dark oak sign
+item.jungle_sign.name=Jungle sign
 # Chain
 item.chain.name=Chain
+# Crafters
+item.fletching_table.name=Fletching table
 # Commands
 # Locatebiome
-commands.locatebiome.usage=Call /locatebiome {biome name} [search radius, standart - 16386], support modded biomes, or /locatebiome list for biome list
+commands.locatebiome.usage=Call /locatebiome {biome name}, support modded biomes, or /locatebiome list for biome list
 commands.locatebiome.out=%s located at %s
 commands.locatebiome.error=Cannot find %s
