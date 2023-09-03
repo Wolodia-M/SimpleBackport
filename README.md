@@ -6,4 +6,4 @@ Backport of new minecraft features to mc 1.12.2
 # Modrinth
 [Modrinth link](https://modrinth.com/mod/simplebackport)
 # Wiki
-[Wiki](https://wolodiam-moddev.github.io/mod-wiki/SimpleBackport.html)
+[Wiki](https://wolodia-m.github.io/mod-wiki/SimpleBackport.html)
